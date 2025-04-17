@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive World Map</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    iframe { width: 100%; height: 100vh; border: none; }
+  </style>
+</head>
+<body>
+  <iframe id="map" src="worldLow.svg"></iframe>
+
+  <script>
+    const statusColors = {
+      "Visited": "#0a7a41",
+      "No restaurant": "#d3d3d3",
+      "About to": "#a4e5a4",
+      "Future": "#b0b0b0"
+    };
+
+    fetch("countries.json")
+      .then(res => res.json())
+      .then(data => {
+        const iframe = document.getElementById("map");
+        iframe.onload = () => {
+          const svgDoc = iframe.contentDocument;
+          data.forEach(({ iso, status }) => {
+            const el = svgDoc.getElementById(iso);
+            if (el && statusColors[status]) {
+              el.style.fill = statusColors[status];
+              el.style.cursor = "pointer";
+            }
+          });
+        };
+      });
+  </script>
+</body>
+</html>
