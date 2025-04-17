@@ -59,7 +59,7 @@
       "country": "Australia",
       "iso": "AU",
       "restaurant": "—",
-      "status": "About to",
+      "status": "No restaurant",
       "dishes": []
     },
     {
@@ -178,7 +178,7 @@
       "country": "Bulgaria",
       "iso": "BG",
       "restaurant": "—",
-      "status": "About to",
+      "status": "No restaurant",
       "dishes": []
     },
     {
