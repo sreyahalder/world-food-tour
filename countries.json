@@ -1,0 +1,318 @@
+[
+    {
+      "country": "Afghanistan",
+      "iso": "AF",
+      "restaurant": "Halal Kitchen Cafe",
+      "status": "Visited",
+      "dishes": ["Beef Qorma", "Lamb & Chicken kabob"]
+    },
+    {
+      "country": "Albania",
+      "iso": "AL",
+      "restaurant": "—",
+      "status": "Visited",
+      "dishes": ["Tavë Kosi", "Fërgesë"]
+    },
+    {
+      "country": "Algeria",
+      "iso": "DZ",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Andorra",
+      "iso": "AD",
+      "restaurant": "---",
+      "status": "Visited",
+      "dishes": ["Trinxat"]
+    },
+    {
+      "country": "Angola",
+      "iso": "AO",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Antigua & Barbuda",
+      "iso": "AG",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Argentina",
+      "iso": "AR",
+      "restaurant": "Buenos Aires Mercado",
+      "status": "Visited",
+      "dishes": ["Entraña Gaucha", "Beef milanesa sandwich", "Malbec"]
+    },
+    {
+      "country": "Armenia",
+      "iso": "AM",
+      "restaurant": "Marouch Restaurant",
+      "status": "Visited",
+      "dishes": ["Kibbeh", "Mantee"]
+    },
+    {
+      "country": "Australia",
+      "iso": "AU",
+      "restaurant": "—",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Austria",
+      "iso": "AT",
+      "restaurant": "Lustig",
+      "status": "Visited",
+      "dishes": ["Käsenkrainer sausage", "Veal schnitzel", "Radler"]
+    },
+    {
+      "country": "Azerbaijan",
+      "iso": "AZ",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Bahamas",
+      "iso": "BS",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Bahrain",
+      "iso": "BH",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Bangladesh",
+      "iso": "BD",
+      "restaurant": "Kasturi",
+      "status": "Visited",
+      "dishes": ["Chicken biriyani", "Lamb curry", "Paratha", "Aloo", "Mishti doi"]
+    },
+    {
+      "country": "Barbados",
+      "iso": "BB",
+      "restaurant": "Bridgetown Roti",
+      "status": "Visited",
+      "dishes": ["Pigeon peas and rice", "Cod fish cakes", "Mac & cheese pie", "Oxtail patty"]
+    },
+    {
+      "country": "Belarus",
+      "iso": "BY",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Belgium",
+      "iso": "BE",
+      "restaurant": "Wurstkuche (Venice/Silverlake)",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Belize",
+      "iso": "BZ",
+      "restaurant": "Little Belize (Inglewood)",
+      "status": "Visited",
+      "dishes": ["Stewed chicken, rice & beans", "Salbute", "Fish Panade", "Garnache", "Coconut tart"]
+    },
+    {
+      "country": "Benin",
+      "iso": "BJ",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Bhutan",
+      "iso": "BT",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Bolivia",
+      "iso": "BO",
+      "restaurant": "Bebas Restaurant (Anaheim)",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Bosnia & Herzegovina",
+      "iso": "BA",
+      "restaurant": "Aroma Cafe",
+      "status": "Visited",
+      "dishes": ["Cepavi", "Burek", "Hurmasica"]
+    },
+    {
+      "country": "Botswana",
+      "iso": "BW",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Brazil",
+      "iso": "BR",
+      "restaurant": "Bossa nova",
+      "status": "Visited",
+      "dishes": ["Pão de queijo", "Feijoada", "Caiparinha"]
+    },
+    {
+      "country": "Brunei",
+      "iso": "BN",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Bulgaria",
+      "iso": "BG",
+      "restaurant": "—",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Burkina Faso",
+      "iso": "BF",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Burundi",
+      "iso": "BI",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Cabo Verde",
+      "iso": "CV",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Cambodia",
+      "iso": "KH",
+      "restaurant": "Monorom Cambodian (Long Beach)",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Cameroon",
+      "iso": "CM",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Canada",
+      "iso": "CA",
+      "restaurant": "The Kroft (DTLA)",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Central African Republic",
+      "iso": "CF",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Chad",
+      "iso": "TD",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Chile",
+      "iso": "CL",
+      "restaurant": "Rincón Chileno (East Hollywood)",
+      "status": "Visited",
+      "dishes": ["Empanada", "Pastel de choclo"]
+    },
+    {
+      "country": "China",
+      "iso": "CN",
+      "restaurant": "Mama Lu’s (DTLA)",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Colombia",
+      "iso": "CO",
+      "restaurant": "La Fonda Antioqueña",
+      "status": "Visited",
+      "dishes": ["Pandebono", "Arepa con queso", "Bandeja paisa", "Tamal"]
+    },
+    {
+      "country": "Comoros",
+      "iso": "KM",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Congo",
+      "iso": "CG",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Costa Rica",
+      "iso": "CR",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Côte d'Ivoire",
+      "iso": "CI",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Croatia",
+      "iso": "HR",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Cuba",
+      "iso": "CU",
+      "restaurant": "El Colmao (DTLA)",
+      "status": "Visited",
+      "dishes": ["Ropa vieja", "Picadillo a la Criolla", "Cubano sandwich", "Flan de guayaba", "Cascos de guayaba con queso crema"]
+    },
+    {
+      "country": "Cyprus",
+      "iso": "CY",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Czech Republic",
+      "iso": "CZ",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    }
+  ]
+  
