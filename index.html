@@ -19,22 +19,31 @@
       "About to": "#a4e5a4",
       "Future": "#b0b0b0"
     };
-
+  
     fetch("countries.json")
       .then(res => res.json())
       .then(data => {
         const iframe = document.getElementById("map");
         iframe.onload = () => {
           const svgDoc = iframe.contentDocument;
+          if (!svgDoc) {
+            console.error("SVG not accessible");
+            return;
+          }
+  
           data.forEach(({ iso, status }) => {
             const el = svgDoc.getElementById(iso);
-            if (el && statusColors[status]) {
+            if (el) {
+              console.log(`Coloring ${iso} as ${status}`);
               el.style.fill = statusColors[status];
               el.style.cursor = "pointer";
+            } else {
+              console.warn(`No element found for ${iso}`);
             }
           });
         };
-      });
-  </script>
+      })
+      .catch(err => console.error("Failed to fetch JSON:", err));
+  </script>  
 </body>
 </html>
