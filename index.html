@@ -9,14 +9,99 @@
     body { 
       margin: 0; 
       font-family: 'Space Mono', monospace;
-      overflow-x: auto;
+      overflow-x: hidden;
     }
-    iframe { 
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .map-container {
+      flex: 1;
       min-width: 1000px;
+      height: 100vh;
+    }
+
+    iframe { 
       width: 100%;
-      height: 100vh; 
+      height: 100%; 
       border: none;
     }
+
+    .restaurant-list {
+      width: 300px;
+      min-width: 200px;
+      padding: 20px;
+      overflow-y: auto;
+      background: #fafafa;
+      height: 100vh;
+    }
+
+    @media (max-width: 1300px) {
+      .map-container {
+        width: 100%;
+        height: 70vh;
+      }
+      .restaurant-list {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .restaurant-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .country-header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .restaurant-name {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .dishes-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding-bottom: 8px;
+    }
+
+    .dish-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100px;
+    }
+
+    .dish-image {
+      width: 80px;
+      height: 80px;
+      background: #eee;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .dish-name {
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+    }
+
     #tooltip {
       position: absolute;
       background-color: #fff;
@@ -34,7 +119,12 @@
   </style>
 </head>
 <body>
-  <iframe id="map" src="worldLow.svg"></iframe>
+  <div class="container">
+    <div class="map-container">
+      <iframe id="map" src="worldLow.svg"></iframe>
+    </div>
+    <div class="restaurant-list" id="restaurantList"></div>
+  </div>
   <div id="tooltip"></div>
 
   <script>
@@ -47,9 +137,66 @@
       "Future": "#c9c9c9"
     };
 
+    function getCountryFlag(countryCode) {
+      const codePoints = countryCode
+        .toUpperCase()
+        .split('')
+        .map(char => 127397 + char.charCodeAt());
+      return String.fromCodePoint(...codePoints);
+    }
+
+    function renderRestaurantList(data) {
+      const restaurantList = document.getElementById('restaurantList');
+      
+      // Filter visited restaurants and sort by country name
+      const visitedRestaurants = data
+        .filter(country => country.status === "Visited")
+        .sort((a, b) => a.country.localeCompare(b.country));
+
+      visitedRestaurants.forEach(country => {
+        const card = document.createElement('div');
+        card.className = 'restaurant-card';
+
+        const header = document.createElement('div');
+        header.className = 'country-header';
+        header.innerHTML = `${getCountryFlag(country.iso)} ${country.country}`;
+
+        const restaurant = document.createElement('div');
+        restaurant.className = 'restaurant-name';
+        restaurant.textContent = country.restaurant;
+
+        const dishesContainer = document.createElement('div');
+        dishesContainer.className = 'dishes-scroll';
+
+        if (country.dishes && country.dishes.length > 0) {
+          country.dishes.forEach(dish => {
+            const dishItem = document.createElement('div');
+            dishItem.className = 'dish-item';
+
+            const dishImage = document.createElement('div');
+            dishImage.className = 'dish-image';
+
+            const dishName = document.createElement('div');
+            dishName.className = 'dish-name';
+            dishName.textContent = dish;
+
+            dishItem.appendChild(dishImage);
+            dishItem.appendChild(dishName);
+            dishesContainer.appendChild(dishItem);
+          });
+        }
+
+        card.appendChild(header);
+        card.appendChild(restaurant);
+        card.appendChild(dishesContainer);
+        restaurantList.appendChild(card);
+      });
+    }
+
     fetch("countries.json")
       .then(res => res.json())
       .then(data => {
+        // Handle map coloring
         const iframe = document.getElementById("map");
         const tooltip = document.getElementById("tooltip");
 
@@ -90,6 +237,9 @@
         } else {
           iframe.onload = () => colorMap();
         }
+
+        // Render restaurant list
+        renderRestaurantList(data);
       })
       .catch(err => console.error("Failed to fetch JSON:", err));
   </script>
