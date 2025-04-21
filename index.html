@@ -136,7 +136,7 @@
       position: absolute;
       background-color: #fff;
       border: 1px solid #D4CACA;
-      padding: 15px;
+      padding: 8px 15px;
       font-size: 12px;
       line-height: 1.2;
       border-radius: 8px;
@@ -189,6 +189,7 @@
       visitedRestaurants.forEach(country => {
         const card = document.createElement('div');
         card.className = 'restaurant-card';
+        card.id = `restaurant-${country.iso}`;
 
         const header = document.createElement('div');
         header.className = 'country-header';
@@ -260,6 +261,14 @@
 
               el.addEventListener("mouseleave", () => {
                 tooltip.style.display = "none";
+              });
+
+              // Add click handler for scrolling
+              el.addEventListener("click", () => {
+                const restaurantCard = document.getElementById(`restaurant-${iso}`);
+                if (restaurantCard) {
+                  restaurantCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
               });
             }
           });
