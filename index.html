@@ -298,12 +298,8 @@
               });
 
               el.addEventListener("mousemove", (e) => {
-                const tooltipHeight = tooltip.offsetHeight;
-                const tooltipWidth = tooltip.offsetWidth;
-                const padding = 10;
-                
-                tooltip.style.left = (e.clientX + padding) + "px";
-                tooltip.style.top = (e.clientY + tooltipHeight - padding) + "px";
+                tooltip.style.left = (e.clientX + 10) + "px";
+                tooltip.style.top = (e.clientY - 50) + "px";
               });
 
               el.addEventListener("mouseleave", () => {
