@@ -310,11 +310,12 @@
                 tooltip.style.display = "none";
               });
 
-              // Add click handler for scrolling
               el.addEventListener("click", () => {
-                const restaurantCard = document.getElementById(`restaurant-${iso}`);
-                if (restaurantCard) {
-                  restaurantCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (window.innerWidth >= 1300) {
+                  const restaurantCard = document.getElementById(`restaurant-${iso}`);
+                  if (restaurantCard) {
+                    restaurantCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
                 }
               });
             }
