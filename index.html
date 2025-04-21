@@ -9,7 +9,6 @@
     body { 
       margin: 0; 
       font-family: 'DM Mono', monospace;
-      overflow-x: hidden;
       background-color: #E8E8E8;
     }
 
@@ -17,14 +16,15 @@
       display: flex;
       flex-wrap: wrap;
       min-height: 100vh;
+      width: 100%;
     }
 
     .map-container {
-      flex: 2;
-      min-width: 1000px;
+      flex: 0 0 1000px; /* Fixed width, no growing or shrinking */
       height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: auto;
     }
 
     .title-container {
@@ -48,36 +48,29 @@
       width: 100%;
       flex: 1;
       border: none;
+      min-width: 1000px; /* Ensure the map maintains its size */
     }
 
     .restaurant-list {
       flex: 1;
-      min-width: 400px;
-      max-width: 800px;
+      min-width: 300px;
       padding: 20px;
       overflow-y: auto;
       height: 100vh;
+      box-sizing: border-box;
     }
 
-    @media (max-width: 1400px) {
-      body {
-        overflow-x: auto;
-      }
-      
-      .container {
-        min-width: 1000px;
-      }
-
+    @media (max-width: 1300px) {
       .map-container {
-        flex: 1 0 1000px;
+        width: 100%;
         height: 70vh;
+        overflow-x: auto;
       }
 
       .restaurant-list {
-        flex: 1 0 100%;
+        width: 100%;
         height: auto;
-        max-width: none;
-        min-width: 0;
+        flex: 0 0 100%;
       }
 
       iframe {
@@ -87,11 +80,11 @@
 
     .restaurant-card {
       background: white;
-      border: 1px solid #e0e0e0;
+      border: 1px solid #D4CACA;
       border-radius: 8px;
       padding: 15px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(217,208,196,0.25);
     }
 
     .country-header {
@@ -169,7 +162,7 @@
 
   <script>
     const statusColors = {
-      "Visited": "#6F6134",
+      "Visited": "#8F8F58",
       "No restaurant": "#C9C4BB",
       "About to": "#C0B79C",
       "Future": "#DBDBD9"
