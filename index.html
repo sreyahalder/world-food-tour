@@ -60,13 +60,28 @@
     }
 
     @media (max-width: 1400px) {
+      body {
+        overflow-x: auto;
+      }
+      
+      .container {
+        min-width: 1000px;
+      }
+
       .map-container {
         flex: 1 0 1000px;
+        height: 70vh;
       }
+
       .restaurant-list {
         flex: 1 0 100%;
         height: auto;
         max-width: none;
+        min-width: 0;
+      }
+
+      iframe {
+        height: 100%;
       }
     }
 
@@ -234,7 +249,7 @@
             const el = svgDoc.getElementById(iso);
             if (!el) return;
 
-            el.style.fill = statusColors[status] || "#ccc";
+            el.style.fill = statusColors[status] || "#d9d4cc";
             el.style.cursor = (status === "Visited") ? "pointer" : "default";
 
             if (status === "Visited") {
