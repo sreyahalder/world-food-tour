@@ -24,7 +24,7 @@
       "country": "Andorra",
       "iso": "AD",
       "restaurant": "---",
-      "status": "Visited",
+      "status": "No restaurant",
       "dishes": ["Trinxat"]
     },
     {
@@ -114,14 +114,14 @@
     {
       "country": "Belgium",
       "iso": "BE",
-      "restaurant": "Wurstkuche (Venice/Silverlake)",
+      "restaurant": "Wurstkuche",
       "status": "About to",
       "dishes": []
     },
     {
       "country": "Belize",
       "iso": "BZ",
-      "restaurant": "Little Belize (Inglewood)",
+      "restaurant": "Little Belize",
       "status": "Visited",
       "dishes": ["Stewed chicken, rice & beans", "Salbute", "Fish Panade", "Garnache", "Coconut tart"]
     },
@@ -142,7 +142,7 @@
     {
       "country": "Bolivia",
       "iso": "BO",
-      "restaurant": "Bebas Restaurant (Anaheim)",
+      "restaurant": "Bebas Restaurant",
       "status": "About to",
       "dishes": []
     },
@@ -205,7 +205,7 @@
     {
       "country": "Cambodia",
       "iso": "KH",
-      "restaurant": "Monorom Cambodian (Long Beach)",
+      "restaurant": "Monorom Cambodian",
       "status": "About to",
       "dishes": []
     },
@@ -219,7 +219,7 @@
     {
       "country": "Canada",
       "iso": "CA",
-      "restaurant": "The Kroft (DTLA)",
+      "restaurant": "The Kroft",
       "status": "About to",
       "dishes": []
     },
@@ -240,14 +240,14 @@
     {
       "country": "Chile",
       "iso": "CL",
-      "restaurant": "Rincón Chileno (East Hollywood)",
+      "restaurant": "Rincón Chileno",
       "status": "Visited",
       "dishes": ["Empanada", "Pastel de choclo"]
     },
     {
       "country": "China",
       "iso": "CN",
-      "restaurant": "Mama Lu’s (DTLA)",
+      "restaurant": "Mama Lu’s",
       "status": "About to",
       "dishes": []
     },
@@ -296,7 +296,7 @@
     {
       "country": "Cuba",
       "iso": "CU",
-      "restaurant": "El Colmao (DTLA)",
+      "restaurant": "El Colmao",
       "status": "Visited",
       "dishes": ["Ropa vieja", "Picadillo a la Criolla", "Cubano sandwich", "Flan de guayaba", "Cascos de guayaba con queso crema"]
     },
