@@ -10,32 +10,33 @@
       margin: 0; 
       font-family: 'DM Mono', monospace;
       background-color: #E8E8E8;
+      overflow-x: auto;
     }
 
     .container {
       display: flex;
       flex-wrap: wrap;
       min-height: 100vh;
-      width: 100%;
+      min-width: 1000px; /* Ensure container is at least as wide as the map */
     }
 
     .map-container {
-      flex: 0 0 1000px; /* Fixed width, no growing or shrinking */
+      flex: 0 0 1000px;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow-x: auto;
+      min-width: 1000px; /* Ensure map container maintains minimum width */
     }
 
     .title-container {
       text-align: center;
       padding: 20px;
+      padding-top: 40px;
     }
 
     .main-title {
       font-size: 14px;
       font-weight: bold;
-      margin-bottom: 8px;
       line-height: 1.4;
     }
 
@@ -48,7 +49,6 @@
       width: 100%;
       flex: 1;
       border: none;
-      min-width: 1000px; /* Ensure the map maintains its size */
     }
 
     .restaurant-list {
@@ -61,16 +61,19 @@
     }
 
     @media (max-width: 1300px) {
+      .container {
+        flex-direction: column;
+      }
+
       .map-container {
-        width: 100%;
         height: 70vh;
-        overflow-x: auto;
+        width: 1000px; /* Fixed width */
       }
 
       .restaurant-list {
         width: 100%;
         height: auto;
-        flex: 0 0 100%;
+        min-height: 30vh;
       }
 
       iframe {
@@ -113,7 +116,7 @@
     .dish-item {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       width: 100px;
     }
 
