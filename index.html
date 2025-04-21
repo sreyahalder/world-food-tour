@@ -303,7 +303,7 @@
                 const padding = 10;
                 
                 tooltip.style.left = (e.clientX + padding) + "px";
-                tooltip.style.top = (e.clientY - tooltipHeight - padding) + "px";
+                tooltip.style.top = (e.clientY + tooltipHeight - padding) + "px";
               });
 
               el.addEventListener("mouseleave", () => {
