@@ -10,7 +10,7 @@
       margin: 0; 
       font-family: 'Space Mono', monospace;
       overflow-x: hidden;
-      background-color: #fae7c9;
+      background-color: #E8E8E8;
     }
 
     .container {
@@ -125,8 +125,8 @@
     }
 
     .dish-image {
-      width: 80px;
-      height: 80px;
+      width: 100%;
+      aspect-ratio: 1/1;
       background: #eee;
       border-radius: 4px;
       margin-bottom: 8px;
@@ -169,10 +169,10 @@
 
   <script>
     const statusColors = {
-      "Visited": "#706134",
-      "No restaurant": "#e1c78f",
-      "About to": "#b0926a",
-      "Future": "#d9d4cc"
+      "Visited": "#6F6134",
+      "No restaurant": "#C9C4BB",
+      "About to": "#C0B79C",
+      "Future": "#DBDBD9"
     };
 
     function getCountryFlag(countryCode) {
@@ -249,7 +249,7 @@
             const el = svgDoc.getElementById(iso);
             if (!el) return;
 
-            el.style.fill = statusColors[status] || "#d9d4cc";
+            el.style.fill = statusColors[status] || statusColors["Future"];
             el.style.cursor = (status === "Visited") ? "pointer" : "default";
 
             if (status === "Visited") {
