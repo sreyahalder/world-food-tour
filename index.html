@@ -136,7 +136,7 @@
       position: absolute;
       background-color: #fff;
       border: 1px solid #D4CACA;
-      padding: 8px 15px;
+      padding: 10px 15px;
       font-size: 12px;
       line-height: 1.2;
       border-radius: 8px;
@@ -255,8 +255,12 @@
               });
 
               el.addEventListener("mousemove", (e) => {
-                tooltip.style.left = (e.clientX + 15) + "px";
-                tooltip.style.top = (e.clientY + 15) + "px";
+                const tooltipHeight = tooltip.offsetHeight;
+                const tooltipWidth = tooltip.offsetWidth;
+                const padding = 10;
+                
+                tooltip.style.left = (e.clientX + padding) + "px";
+                tooltip.style.top = (e.clientY - tooltipHeight - padding) + "px";
               });
 
               el.addEventListener("mouseleave", () => {
