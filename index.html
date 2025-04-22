@@ -133,7 +133,7 @@
       font-size: 12px;
       color: #1e1e1c;
       margin: 8px 0;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .restaurant-name {
@@ -148,7 +148,6 @@
       overflow-x: auto;
       gap: 12px;
       padding-bottom: 8px;
-      min-height: 140px;
     }
 
     .dish-item {
@@ -262,6 +261,8 @@
         header.innerHTML = `${getCountryFlag(country.iso)} ${country.country} |`;
         header.appendChild(restaurantInfo);
 
+        card.appendChild(header);
+
         if (country.notes) {
           const notesDiv = document.createElement('div');
           notesDiv.className = 'restaurant-notes';
@@ -297,7 +298,6 @@
           });
         }
 
-        card.appendChild(header);
         card.appendChild(dishesContainer);
         restaurantList.appendChild(card);
       });
