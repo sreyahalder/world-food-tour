@@ -3,6 +3,7 @@
       "country": "Afghanistan",
       "iso": "AF",
       "restaurant": "Halal Kitchen Cafe",
+      "neighborhood": "Northridge",
       "status": "Visited",
       "dishes": ["Beef Qorma", "Lamb & Chicken kabob"]
     },
@@ -44,7 +45,8 @@
     {
       "country": "Argentina",
       "iso": "AR",
-      "restaurant": "Buenos Aires Mercado",
+      "restaurant": "Mercado Buenos Aires",
+      "neighborhood": "Van Nuys",
       "status": "Visited",
       "dishes": ["Entraña Gaucha", "Beef milanesa sandwich"]
     },
@@ -52,6 +54,7 @@
       "country": "Armenia",
       "iso": "AM",
       "restaurant": "Marouch Restaurant",
+      "neighborhood": "East Hollywood",
       "status": "Visited",
       "dishes": ["Kibbeh", "Mantee"]
     },
@@ -66,6 +69,7 @@
       "country": "Austria",
       "iso": "AT",
       "restaurant": "Lustig",
+      "neighborhood": "Culver City",
       "status": "Visited",
       "dishes": ["Käsenkrainer sausage", "Veal schnitzel", "Radler"]
     },
@@ -94,6 +98,7 @@
       "country": "Bangladesh",
       "iso": "BD",
       "restaurant": "Kasturi",
+      "neighborhood": "Little Bangladesh",
       "status": "Visited",
       "dishes": ["Chicken biriyani, Lamb curry, Aloo", "Paratha (not pictured)", "Mishti doi (not pictured)"]
     },
@@ -101,6 +106,7 @@
       "country": "Barbados",
       "iso": "BB",
       "restaurant": "Bridgetown Roti",
+      "neighborhood": "East Hollywood",
       "status": "Visited",
       "dishes": ["Pigeon peas and rice", "Cod fish cakes", "Mac & cheese pie", "Oxtail patty"]
     },
@@ -122,6 +128,7 @@
       "country": "Belize",
       "iso": "BZ",
       "restaurant": "Little Belize",
+      "neighborhood": "Inglewood",
       "status": "Visited",
       "dishes": ["Stewed chicken, rice & beans", "Salbute, Fish Panade, Garnache", "Coconut tart"]
     },
@@ -150,6 +157,7 @@
       "country": "Bosnia & Herzegovina",
       "iso": "BA",
       "restaurant": "Aroma Cafe",
+      "neighborhood": "Rancho Park",
       "status": "Visited",
       "dishes": ["Cepavi", "Burek", "Hurmasica"]
     },
@@ -163,7 +171,8 @@
     {
       "country": "Brazil",
       "iso": "BR",
-      "restaurant": "Bossa nova",
+      "restaurant": "Bossa Nova Brazilian Cuisine",
+      "neighborhood": "All over!",
       "status": "Visited",
       "dishes": ["Pão de queijo", "Feijoada", "Caiparinha"]
     },
@@ -241,6 +250,7 @@
       "country": "Chile",
       "iso": "CL",
       "restaurant": "Rincón Chileno",
+      "neighborhood": "East Hollywood",
       "status": "Visited",
       "dishes": ["Empanada", "Pastel de choclo"]
     },
@@ -255,6 +265,7 @@
       "country": "Colombia",
       "iso": "CO",
       "restaurant": "La Fonda Antioqueña",
+      "neighborhood": "Larchmont",
       "status": "Visited",
       "dishes": ["Pandebono", "Arepa con queso", "Bandeja paisa", "Tamal"]
     },
@@ -297,6 +308,7 @@
       "country": "Cuba",
       "iso": "CU",
       "restaurant": "El Colmao",
+      "neighborhood": "Pico-Union",
       "status": "Visited",
       "dishes": ["Ropa vieja", "Picadillo a la Criolla", "Cubano sandwich", "Flan de guayaba", "Cascos de guayaba con queso crema"]
     },
