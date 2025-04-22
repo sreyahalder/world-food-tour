@@ -242,11 +242,7 @@
 
         const header = document.createElement('div');
         header.className = 'country-header';
-        header.innerHTML = `${getCountryFlag(country.iso)} ${country.country}`;
-
-        const restaurant = document.createElement('div');
-        restaurant.className = 'restaurant-name';
-        restaurant.textContent = country.restaurant;
+        header.innerHTML = `${getCountryFlag(country.iso)} ${country.country} <span style="font-weight: normal; font-style: italic; color: #666;">| ${country.restaurant}</span>`;
 
         const dishesContainer = document.createElement('div');
         dishesContainer.className = 'dishes-scroll';
@@ -277,7 +273,6 @@
         }
 
         card.appendChild(header);
-        card.appendChild(restaurant);
         card.appendChild(dishesContainer);
         restaurantList.appendChild(card);
       });
