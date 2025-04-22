@@ -149,6 +149,7 @@
       background: #eee;
       border-radius: 4px;
       margin-bottom: 8px;
+      object-fit: cover;
     }
 
     .dish-name {
@@ -221,6 +222,8 @@
       return String.fromCodePoint(...codePoints);
     }
 
+    let dishImages = {};
+
     function renderRestaurantList(data) {
       const restaurantList = document.getElementById('restaurantList');
       
@@ -250,8 +253,13 @@
             const dishItem = document.createElement('div');
             dishItem.className = 'dish-item';
 
-            const dishImage = document.createElement('div');
+            const dishImage = document.createElement('img');
             dishImage.className = 'dish-image';
+            dishImage.src = dishImages[dish] || '';
+            dishImage.alt = dish;
+            if (!dishImages[dish]) {
+              dishImage.style.background = '#eee';
+            }
 
             const dishName = document.createElement('div');
             dishName.className = 'dish-name';
@@ -270,9 +278,14 @@
       });
     }
 
-    fetch("countries.json")
-      .then(res => res.json())
-      .then(data => {
+    // Load both JSON files before rendering
+    Promise.all([
+      fetch("countries.json").then(res => res.json()),
+      fetch("dish-images.json").then(res => res.json())
+    ])
+      .then(([countriesData, imagesData]) => {
+        dishImages = imagesData;
+        
         // Handle map coloring
         const iframe = document.getElementById("map");
         const tooltip = document.getElementById("tooltip");
@@ -284,7 +297,7 @@
             return;
           }
 
-          data.forEach(({ iso, status, country, restaurant }) => {
+          countriesData.forEach(({ iso, status, country, restaurant }) => {
             const el = svgDoc.getElementById(iso);
             if (!el) return;
 
@@ -300,7 +313,7 @@
               el.addEventListener("mousemove", (e) => {
                 const iframeRect = iframe.getBoundingClientRect();
                 tooltip.style.left = (e.clientX + 15) + "px";
-                tooltip.style.top = (e.clientY - 45 + iframeRect.top) + "px";
+                tooltip.style.top = (e.clientY - 60 + iframeRect.top) + "px";
               });
 
               el.addEventListener("mouseleave", () => {
@@ -326,7 +339,7 @@
         }
 
         // Render restaurant list
-        renderRestaurantList(data);
+        renderRestaurantList(countriesData);
       })
       .catch(err => console.error("Failed to fetch JSON:", err));
   </script>
