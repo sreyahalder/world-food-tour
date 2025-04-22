@@ -30,7 +30,7 @@
 
     .title-container {
       text-align: center;
-      padding-top: 40px;
+      padding-top: 20px;
       padding-right: 40px;
       padding-left: 40px;
       padding-bottom: 10px;
@@ -300,7 +300,7 @@
               el.addEventListener("mousemove", (e) => {
                 const iframeRect = iframe.getBoundingClientRect();
                 tooltip.style.left = (e.clientX + 15) + "px";
-                tooltip.style.top = (e.clientY - 15 + iframeRect.top) + "px";
+                tooltip.style.top = (e.clientY - 45 + iframeRect.top) + "px";
               });
 
               el.addEventListener("mouseleave", () => {
