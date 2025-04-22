@@ -118,8 +118,15 @@
       font-weight: bold;
       margin-bottom: 8px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 8px;
+    }
+
+    .restaurant-info {
+      font-weight: normal;
+      font-style: italic;
+      color: #666;
     }
 
     .restaurant-name {
@@ -242,7 +249,11 @@
 
         const header = document.createElement('div');
         header.className = 'country-header';
-        header.innerHTML = `${getCountryFlag(country.iso)} ${country.country} | <span style="font-weight: normal; font-style: italic; color: #666;">${country.restaurant} (${country.neighborhood})</span>`;
+        const restaurantInfo = document.createElement('div');
+        restaurantInfo.className = 'restaurant-info';
+        restaurantInfo.textContent = `${country.restaurant} (${country.neighborhood})`;
+        header.innerHTML = `${getCountryFlag(country.iso)} ${country.country} |`;
+        header.appendChild(restaurantInfo);
 
         const dishesContainer = document.createElement('div');
         dishesContainer.className = 'dishes-scroll';
