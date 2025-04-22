@@ -129,6 +129,13 @@
       color: #666;
     }
 
+    .restaurant-notes {
+      font-size: 12px;
+      color: #1e1e1c;
+      margin: 8px 0;
+      line-height: 1.1;
+    }
+
     .restaurant-name {
       color: #666;
       font-size: 12px;
@@ -254,6 +261,13 @@
         restaurantInfo.textContent = `${country.restaurant} (${country.neighborhood})`;
         header.innerHTML = `${getCountryFlag(country.iso)} ${country.country} |`;
         header.appendChild(restaurantInfo);
+
+        if (country.notes) {
+          const notesDiv = document.createElement('div');
+          notesDiv.className = 'restaurant-notes';
+          notesDiv.textContent = country.notes;
+          card.appendChild(notesDiv);
+        }
 
         const dishesContainer = document.createElement('div');
         dishesContainer.className = 'dishes-scroll';

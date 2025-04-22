@@ -5,7 +5,8 @@
       "restaurant": "Halal Kitchen Cafe",
       "neighborhood": "Northridge",
       "status": "Visited",
-      "dishes": ["Beef Qorma", "Lamb & Chicken kabob"]
+      "dishes": ["Beef Qorma", "Lamb & Chicken kabob"],
+      "notes": "This restaurant is pretty unassuming, in a random strip mall in the valley. When we got there, the only woman running it took our order and appeared to just go in the back and cook it herself. And it was delicious. Afterwards she was telling us about her son and how he's a realtor (?) gave us his card."
     },
     {
       "country": "Albania",
@@ -48,7 +49,8 @@
       "restaurant": "Mercado Buenos Aires",
       "neighborhood": "Van Nuys",
       "status": "Visited",
-      "dishes": ["Entraña Gaucha", "Beef milanesa sandwich"]
+      "dishes": ["Entraña Gaucha", "Beef milanesa sandwich"],
+      "notes": "This is still our #1 restaurant from this series. It's an Argentine deli/market that's got black and white tiled floors, a butcher counter with probably the finest meats in LA, football on the TVs, and servers who kept thinking we speak Spanish. We started with bread and chimichurri and finished with glasses of Merlot, and had an amazing cut of steak in between. Why is it our favorite? I don't think you can beat really good steak."
     },
     {
       "country": "Armenia",
@@ -56,7 +58,8 @@
       "restaurant": "Marouch Restaurant",
       "neighborhood": "East Hollywood",
       "status": "Visited",
-      "dishes": ["Kibbeh", "Mantee"]
+      "dishes": ["Kibbeh", "Mantee"],
+      "notes": "We went here thinking it was Albanian food, but it turned out to be Armenian AND a rec from an Armenian lady I bought some Salvatore Ferragamo shoes from at the Silverlake Flea. I'm not gonna lie, she seemed night enough but those shoes gave me blisters for days. Anyways, the food was great and we especially loved the mantee."
     },
     {
       "country": "Australia",
@@ -71,7 +74,8 @@
       "restaurant": "Lustig",
       "neighborhood": "Culver City",
       "status": "Visited",
-      "dishes": ["Käsenkrainer sausage", "Veal schnitzel", "Radler"]
+      "dishes": ["Käsenkrainer sausage", "Veal schnitzel", "Radler"],
+      "notes": "This was the only Austrian restaurant in LA, and it happened to be a pretty upscale spot where only like two things on the menu were *truly* Austrian. I won't ever complain about schnitzel and sausage, tbh. And the radler was great. However, the star of the show was the chicken liver pate's we had as a little amouse bouche, even though they arent' really Austrian."
     },
     {
       "country": "Azerbaijan",
