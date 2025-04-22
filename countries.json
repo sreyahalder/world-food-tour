@@ -95,7 +95,7 @@
       "iso": "BD",
       "restaurant": "Kasturi",
       "status": "Visited",
-      "dishes": ["Chicken biriyani", "Lamb curry", "Paratha", "Aloo", "Mishti doi"]
+      "dishes": ["Chicken biriyani, Lamb curry, Aloo", "Paratha", "Mishti doi"]
     },
     {
       "country": "Barbados",
@@ -123,7 +123,7 @@
       "iso": "BZ",
       "restaurant": "Little Belize",
       "status": "Visited",
-      "dishes": ["Stewed chicken, rice & beans", "Salbute", "Fish Panade", "Garnache", "Coconut tart"]
+      "dishes": ["Stewed chicken, rice & beans", "Salbute, Fish Panade, Garnache", "Coconut tart"]
     },
     {
       "country": "Benin",

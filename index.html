@@ -90,7 +90,7 @@
 
       .map-container {
         width: 1000px;
-        height: auto;
+        height: 800px;
       }
 
       .restaurant-list {
@@ -255,10 +255,12 @@
 
             const dishImage = document.createElement('img');
             dishImage.className = 'dish-image';
-            dishImage.src = dishImages[dish] || '';
-            dishImage.alt = dish;
-            if (!dishImages[dish]) {
+            if (dishImages[dish] && dishImages[dish] !== '') {
+              dishImage.src = dishImages[dish];
+              dishImage.alt = dish;
+            } else {
               dishImage.style.background = '#eee';
+              dishImage.alt = '';
             }
 
             const dishName = document.createElement('div');
