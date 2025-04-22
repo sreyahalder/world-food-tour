@@ -75,7 +75,7 @@
       "neighborhood": "Culver City",
       "status": "Visited",
       "dishes": ["Käsenkrainer sausage", "Veal schnitzel", "Radler"],
-      "notes": "This was the only Austrian restaurant in LA, and it happened to be a pretty upscale spot where only like two things on the menu were *truly* Austrian. I won't ever complain about schnitzel and sausage, tbh. And the radler was great. However, the star of the show was the chicken liver pates we had as a little amouse bouche, even though they arent' really Austrian."
+      "notes": "This was the only Austrian restaurant in LA, and it happened to be a pretty upscale spot where only like two things on the menu were *truly* Austrian. I won't ever complain about schnitzel and sausage, tbh. And the radler was great. However, the star of the show was the chicken liver pates we had as a little amouse bouche, even though they aren't really Austrian."
     },
     {
       "country": "Azerbaijan",
@@ -104,7 +104,8 @@
       "restaurant": "Kasturi",
       "neighborhood": "Little Bangladesh",
       "status": "Visited",
-      "dishes": ["Chicken biriyani, Lamb curry, Aloo", "Paratha (not pictured)", "Mishti doi (not pictured)"]
+      "dishes": ["Chicken biriyani, Lamb curry, Aloo", "Paratha (not pictured)", "Mishti doi (not pictured)"],
+      "notes": "So my family is Bengali. Not Bangladeshi, but we do have a lot of food overlap. So naturally I had really high expectations for food from Little Bangladesh. This spot doubled as a market and a restaurant, and it was all a buffet style except for the fresh parathas they would make you upon request. I think I had just gotten back from India a few weeks before we went, so I was freshly fluent in Bengali and got to show off a bit (I definitely sounded like an idiot). We tried quite a few things that I liked to eat growing up, but none were honestly as good as what my mom and grandmas would make."
     },
     {
       "country": "Barbados",
@@ -112,7 +113,8 @@
       "restaurant": "Bridgetown Roti",
       "neighborhood": "East Hollywood",
       "status": "Visited",
-      "dishes": ["Pigeon peas and rice", "Cod fish cakes", "Mac & cheese pie", "Oxtail patty"]
+      "dishes": ["Pigeon peas and rice", "Cod fish cakes", "Mac & cheese pie", "Oxtail patty"],
+      "notes": "Bridgetown is a pretty popular spot in LA, so this was a bit different than the usual hole-in-the-wall joints we end up going to. The dishes were a little more spruced up, but I actually loved the fast-casual modern take on Barbadian food. The pigeon peas and rice were really great."
     },
     {
       "country": "Belarus",
@@ -134,7 +136,8 @@
       "restaurant": "Little Belize",
       "neighborhood": "Inglewood",
       "status": "Visited",
-      "dishes": ["Stewed chicken, rice & beans", "Salbute, Fish Panade, Garnache", "Coconut tart"]
+      "dishes": ["Stewed chicken, rice & beans", "Salbute, Fish Panade, Garnache", "Coconut tart"],
+      "notes": "When we saw this spot was in Inglewood, we were like 'when are we gonna make it out there?' But turns out there was a Clippers vs. Knicks game one night that ended up being the perfect excuse. I think this spot made me realize how cool of an experience this series is. I wasn't planning on going to Belize anytime soon, but getting to try the really unique street foods from this country in the comfort of our own city is a really fascinating feeling."
     },
     {
       "country": "Benin",
@@ -163,7 +166,8 @@
       "restaurant": "Aroma Cafe",
       "neighborhood": "Rancho Park",
       "status": "Visited",
-      "dishes": ["Cepavi", "Burek", "Hurmasica"]
+      "dishes": ["Cepavi", "Burek", "Hurmasica"],
+      "notes": "Cepavi is DELICIOUS. I know it's just bread and meat, but everything tasted so good. Aroma Cafe also doubles as a restaurant and a market, service here was really good, and the place was just super comfortable."
     },
     {
       "country": "Botswana",
@@ -178,7 +182,8 @@
       "restaurant": "Bossa Nova Brazilian Cuisine",
       "neighborhood": "All over!",
       "status": "Visited",
-      "dishes": ["Pão de queijo", "Feijoada", "Caiparinha"]
+      "dishes": ["Pão de queijo", "Feijoada", "Caiparinha"],
+      "notes": "We went to one of the Bossa Novas downtown since we were catching a show at The Belasco. In order to try something different, we got the feijoada which came with a million side dishes. All of it was so good but we were so stuffed."
     },
     {
       "country": "Brunei",
@@ -256,7 +261,8 @@
       "restaurant": "Rincón Chileno",
       "neighborhood": "East Hollywood",
       "status": "Visited",
-      "dishes": ["Empanada", "Pastel de choclo"]
+      "dishes": ["Empanada", "Pastel de choclo"],
+      "notes": "This one was also another stop before a concert at Zebulon. It's in a super unassuming area, and had a Chilean bakery attached to it. Now Chile, I know your food is not globally known as the best, but I actually found the Pastel de choclo quite comforting."
     },
     {
       "country": "China",
@@ -271,7 +277,8 @@
       "restaurant": "La Fonda Antioqueña",
       "neighborhood": "Larchmont",
       "status": "Visited",
-      "dishes": ["Pandebono", "Arepa con queso", "Bandeja paisa", "Tamal"]
+      "dishes": ["Pandebono", "Arepa con queso", "Bandeja paisa", "Tamal"],
+      "notes": "Somehow we always manage on over ordering, even with three people. Shoutout to Shridhar for joining this one. The cheese with the arepa was unlike anything I've had before, just super light and soft. I expected the Bandeja paisa to be good--it's Anthony's favorite thing to get here--but the tamal kinda blew me away. And it was also MASSIVE."
     },
     {
       "country": "Comoros",
@@ -314,7 +321,8 @@
       "restaurant": "El Colmao",
       "neighborhood": "Pico-Union",
       "status": "Visited",
-      "dishes": ["Ropa vieja", "Picadillo a la Criolla", "Cubano sandwich", "Flan de guayaba", "Cascos de guayaba con queso crema"]
+      "dishes": ["Ropa vieja", "Picadillo a la Criolla", "Cubano sandwich", "Flan de guayaba", "Cascos de guayaba con queso crema"],
+      "notes": "Nat and Ben joined us for this one. All of it was destroyed between the four of us, and the ropa vieja was the star. I think this was also my first Cubano, which is somewhere at the top of my list of best sandwiches of all time now. As for dessert, the guava with cream cheese was amazing, and reminded me of this one guava and cheese pastry I had at Demo in Lima."
     },
     {
       "country": "Cyprus",
