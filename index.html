@@ -379,6 +379,13 @@
     const iframe = document.getElementById("map");
     const tooltip = document.getElementById("tooltip");
 
+    // Force reload the iframe after a short delay
+    setTimeout(() => {
+      const currentSrc = iframe.src;
+      iframe.src = '';
+      iframe.src = currentSrc;
+    }, 100);
+
     // Wait for iframe to load
     iframe.addEventListener('load', () => {
       svgLoaded = true;
