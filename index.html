@@ -358,26 +358,38 @@
     let countriesData = null;
 
     function checkAllLoaded() {
-      if (svgLoaded && dataLoaded) {
-        colorMap();
-        document.getElementById('loadingOverlay').style.display = 'none';
+      if (svgLoaded && dataLoaded && countriesData) {
+        // Small delay to ensure SVG is fully parsed
+        setTimeout(() => {
+          const svgDoc = iframe.contentDocument;
+          if (svgDoc) {
+            colorMap();
+            document.getElementById('loadingOverlay').style.display = 'none';
+          } else {
+            // If still not loaded, retry once more after a longer delay
+            setTimeout(() => {
+              colorMap();
+              document.getElementById('loadingOverlay').style.display = 'none';
+            }, 500);
+          }
+        }, 100);
       }
     }
 
     const iframe = document.getElementById("map");
     const tooltip = document.getElementById("tooltip");
 
+    // Wait for iframe to load
     iframe.addEventListener('load', () => {
       svgLoaded = true;
-      if (countriesData) {
-        checkAllLoaded();
-      }
+      checkAllLoaded();
     });
 
     function colorMap() {
       const svgDoc = iframe.contentDocument;
       if (!svgDoc) {
         console.error("SVG not accessible");
+        document.getElementById('loadingOverlay').style.display = 'none';
         return;
       }
 
