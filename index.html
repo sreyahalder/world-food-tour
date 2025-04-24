@@ -190,9 +190,57 @@
       z-index: 10;
       white-space: nowrap;
     }
+
+    /* Add new loading overlay styles */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(232, 232, 232, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #C0B79C;
+      border-top: 5px solid #8F8F58;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
+  <!-- Add loading overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading map data...</div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="map-container">
       <div class="title-container">
@@ -304,70 +352,89 @@
       });
     }
 
+    // Modify the loading and initialization logic
+    let svgLoaded = false;
+    let dataLoaded = false;
+    let countriesData = null;
+
+    function checkAllLoaded() {
+      if (svgLoaded && dataLoaded) {
+        colorMap();
+        document.getElementById('loadingOverlay').style.display = 'none';
+      }
+    }
+
+    const iframe = document.getElementById("map");
+    const tooltip = document.getElementById("tooltip");
+
+    iframe.addEventListener('load', () => {
+      svgLoaded = true;
+      if (countriesData) {
+        checkAllLoaded();
+      }
+    });
+
+    function colorMap() {
+      const svgDoc = iframe.contentDocument;
+      if (!svgDoc) {
+        console.error("SVG not accessible");
+        return;
+      }
+
+      countriesData.forEach(({ iso, status, country, restaurant }) => {
+        const el = svgDoc.getElementById(iso);
+        if (!el) return;
+
+        el.style.fill = statusColors[status] || statusColors["Future"];
+        el.style.cursor = (status === "Visited") ? "pointer" : "default";
+
+        if (status === "Visited") {
+          el.addEventListener("mouseenter", () => {
+            tooltip.innerHTML = `<strong>${country}</strong><br/>📍${restaurant}`;
+            tooltip.style.display = "block";
+          });
+
+          el.addEventListener("mousemove", (e) => {
+            const iframeRect = iframe.getBoundingClientRect();
+            tooltip.style.left = (e.clientX + 10) + "px";
+            tooltip.style.top = (e.clientY - 60 + iframeRect.top) + "px";
+          });
+
+          el.addEventListener("mouseleave", () => {
+            tooltip.style.display = "none";
+          });
+
+          el.addEventListener("click", () => {
+            if (window.innerWidth >= 1300) {
+              const restaurantCard = document.getElementById(`restaurant-${iso}`);
+              if (restaurantCard) {
+                restaurantCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }
+          });
+        }
+      });
+    }
+
     // Load both JSON files before rendering
     Promise.all([
       fetch("countries.json").then(res => res.json()),
       fetch("dish-images.json").then(res => res.json())
     ])
-      .then(([countriesData, imagesData]) => {
+      .then(([data, imagesData]) => {
+        countriesData = data;
         dishImages = imagesData;
         
-        // Handle map coloring
-        const iframe = document.getElementById("map");
-        const tooltip = document.getElementById("tooltip");
-
-        function colorMap() {
-          const svgDoc = iframe.contentDocument;
-          if (!svgDoc) {
-            console.error("SVG not accessible");
-            return;
-          }
-
-          countriesData.forEach(({ iso, status, country, restaurant }) => {
-            const el = svgDoc.getElementById(iso);
-            if (!el) return;
-
-            el.style.fill = statusColors[status] || statusColors["Future"];
-            el.style.cursor = (status === "Visited") ? "pointer" : "default";
-
-            if (status === "Visited") {
-              el.addEventListener("mouseenter", () => {
-                tooltip.innerHTML = `<strong>${country}</strong><br/>📍${restaurant}`;
-                tooltip.style.display = "block";
-              });
-
-              el.addEventListener("mousemove", (e) => {
-                const iframeRect = iframe.getBoundingClientRect();
-                tooltip.style.left = (e.clientX + 10) + "px";
-                tooltip.style.top = (e.clientY - 60 + iframeRect.top) + "px";
-              });
-
-              el.addEventListener("mouseleave", () => {
-                tooltip.style.display = "none";
-              });
-
-              el.addEventListener("click", () => {
-                if (window.innerWidth >= 1300) {
-                  const restaurantCard = document.getElementById(`restaurant-${iso}`);
-                  if (restaurantCard) {
-                    restaurantCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  }
-                }
-              });
-            }
-          });
-        }
-
-        if (iframe.contentDocument?.readyState === "complete") {
-          colorMap();
-        } else {
-          iframe.onload = () => colorMap();
-        }
-
         // Render restaurant list
-        renderRestaurantList(countriesData);
+        renderRestaurantList(data);
+        
+        dataLoaded = true;
+        checkAllLoaded();
       })
-      .catch(err => console.error("Failed to fetch JSON:", err));
+      .catch(err => {
+        console.error("Failed to fetch JSON:", err);
+        document.getElementById('loadingOverlay').style.display = 'none';
+      });
   </script>
 </body>
 </html>
