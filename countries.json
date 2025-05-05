@@ -267,9 +267,11 @@
     {
       "country": "China",
       "iso": "CN",
-      "restaurant": "Mama Lu’s",
-      "status": "About to",
-      "dishes": []
+      "restaurant": "Chengdu Taste",
+      "neighborhood": "Alhambra",
+      "status": "Visited",
+      "dishes": ["Ma po tofu", "Marinated pig's feet", "Cucumber salad"],
+      "notes": "One of my best friends from college, Chloe, would make me and our roommates mapo tofu when we were 20 living in Santa Cruz during the pandemic. I haven't had it since then, but it was really great to think about that time while I couldn't feel my mouth. The pig's feet were great also; Anthony and I made pig's feet ourselves a couple months before this, and we were surprised that it tasted about thes same. Only difference was that our pig feet were pretty much fully intact due to a weak cleaver. And the cucumber salad came out at the perfect time, pairing very well with the tofu."
     },
     {
       "country": "Colombia",
