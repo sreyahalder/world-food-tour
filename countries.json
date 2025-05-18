@@ -224,8 +224,10 @@
       "country": "Cambodia",
       "iso": "KH",
       "restaurant": "Monorom Cambodian",
-      "status": "About to",
-      "dishes": []
+      "neighborhood": "Long Beach",
+      "status": "Visited",
+      "dishes": ["Nom Ban Chok", "Sach Jrouk Jien", "Bobor"],
+      "notes": "So Long Beach apparently has the largest Khmer population outside of Cambodia. We decided to make a day trip out of it because it's quite far from west/mid LA, ended up doing a sake tasting and trying pickled eggs along the way. Our friends from norcal, Quinn and Fin, joined and we tried a bunch of really delicious things. My freshman year roommate and one of my closest friends of college, Julia, is Cambodian and I have a number of other Cambodian friends, and I had never tried the food til now but found it so so good!”"
     },
     {
       "country": "Cameroon",
@@ -339,6 +341,15 @@
       "restaurant": "---",
       "status": "No restaurant",
       "dishes": []
+    },
+    {
+      "country": "Denmark",
+      "iso": "DK",
+      "restaurant": "Bit O' Denmark, Copenhagen Sausage Garden, Æbleskivehuset, Olsen's Danish Village Bakery ",
+      "neighborhood": "Solvang, CA",
+      "status": "Visited",
+      "dishes": ["Herring smørrebrød", "Frikadeller, roast pork, havarti smørrebrød", "Æbleskiver", "Wienerbrød", "Rød pølse", "Red lager & Carlsberg"],
+      "notes": "I think it’s always worth it to drive 2 and a half hours out of town just for food. It just so happened that there was a ‘Little Denmark’ just this distance away from us. Even though this series is meant for LA, when you have a chance to try authentic food, you just gotta go. We started out at Bit O’ Denmark, the oldest building in Solvang, and had a ton of different kinds of smørrebrød. We walked around and picked up a ton of little goodies (olive oil, lavender soap, alligator jerky, christmas incense, porcelain, danish chocolates), and lots and lots of pastries. Solvang is also in the middle of socal’s wine country so we stopped by a tasting room for some Santa Ynez wine, too. Ended the day with a crazy sausage and beer flight."
     }
   ]
   
