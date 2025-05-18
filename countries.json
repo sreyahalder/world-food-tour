@@ -350,6 +350,75 @@
       "status": "Visited",
       "dishes": ["Herring smørrebrød", "Frikadeller, roast pork, havarti smørrebrød", "Æbleskiver", "Wienerbrød", "Rød pølse", "Red lager & Carlsberg"],
       "notes": "I think it’s always worth it to drive 2 and a half hours out of town just for food. It just so happened that there was a ‘Little Denmark’ just this distance away from us. Even though this series is meant for LA, when you have a chance to try authentic food, you just gotta go. We started out at Bit O’ Denmark, the oldest building in Solvang, and had a ton of different kinds of smørrebrød. We walked around and picked up a ton of little goodies (olive oil, lavender soap, alligator jerky, christmas incense, porcelain, danish chocolates), and lots and lots of pastries. Solvang is also in the middle of socal’s wine country so we stopped by a tasting room for some Santa Ynez wine, too. Ended the day with a crazy sausage and beer flight."
+    },
+    {
+      "country": "Dominican Republic",
+      "iso": "DO",
+      "restaurant": "Karibbean Cuisine",
+      "neighborhood": "Culver City",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Ecuador",
+      "iso": "EC",
+      "restaurant": "La Manaba Comida Ecuatoriana de Yanine",
+      "neighborhood": "Elysian Park",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Egypt",
+      "iso": "EG",
+      "restaurant": "Tut's Egyptian Cuisine",
+      "neighborhood": "Mar Vista",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "El Salvador",
+      "iso": "SV",
+      "restaurant": "Jaragua Restaurant",
+      "neighborhood": "Larchmont",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Equatorial Guinea",
+      "iso": "GQ",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Eritrea",
+      "iso": "ER",
+      "restaurant": "Industry Café & Jazz",
+      "neighborhood": "Culver City",
+      "status": "About to",
+      "dishes": []
+    },
+    {
+      "country": "Estonia",
+      "iso": "EE",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Eswatini",
+      "iso": "SZ",
+      "restaurant": "---",
+      "status": "No restaurant",
+      "dishes": []
+    },
+    {
+      "country": "Ethiopia",
+      "iso": "ET",
+      "restaurant": "Messob",
+      "neighborhood": "Little Ethiopia",
+      "status": "About to",
+      "dishes": []
     }
   ]
   
