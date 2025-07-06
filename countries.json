@@ -240,8 +240,10 @@
       "country": "Canada",
       "iso": "CA",
       "restaurant": "The Kroft",
-      "status": "About to",
-      "dishes": []
+      "neighborhood": "DTLA",
+      "status": "Visited",
+      "dishes": ["Poutine"],
+      "notes": "I had never had poutine before, but Anthony loves it. The description always sounded like loaded fries to me: gravy and cheese curds. And what even was a cheese curd? There happened to be a chain in LA that exclusively sold variations of poutine (and the original, of course), so we tried a few. And he's right, poutine is delicious."
     },
     {
       "country": "Central African Republic",
@@ -356,8 +358,9 @@
       "iso": "DO",
       "restaurant": "Karibbean Cuisine",
       "neighborhood": "Culver City",
-      "status": "About to",
-      "dishes": []
+      "status": "Visited",
+      "dishes": ["Mofongo", "Picadera dominica", "Carne de res guisada", "Chuletas"],
+      "notes": "Caribbean food never disappoints, but I was truly blown away by the taste of Dominican mofongo. The brothy pork we poured on top just really hit the spot. The Dominican pork chops and beef stew were insane as well. Brian and Michelle joined for this one, and we sat outside this little joint with Brian's new dog and all these heaping plates of moro. The guys who run it are so nice."
     },
     {
       "country": "Ecuador",
@@ -380,8 +383,9 @@
       "iso": "SV",
       "restaurant": "Jaragua Restaurant",
       "neighborhood": "Larchmont",
-      "status": "About to",
-      "dishes": []
+      "status": "Visited",
+      "dishes": ["Revueltos and frijoles pupusas", "Pan con pavo", "Empanada de leche"],
+      "notes": "One of my best friends is Salvadoran and she had sent me a giant list of food we had to try when we got to E. As much as I wanted to try it all, I asked her to pick a couple of, in her opinion, must try dishes. Now I'm no stranger to pupusas -- there was a pupusa joint a couple blocks from my old apartment in Mission Dolores that I would go to often. They're an insanely delicious practical food. The ones we got here were stellar. And the pan con pavo really hit, although it was almost impossible to bite so we dug through it with fork and knife."
     },
     {
       "country": "Equatorial Guinea",
