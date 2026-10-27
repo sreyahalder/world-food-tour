@@ -1,0 +1,15 @@
+Journal paper texture
+
+Generated with the built-in image-generation tool on 2026-10-21.
+Web asset: public/assets/textures/journal-paper.webp
+Source: /Users/sreyahalder/.codex/generated_images/01a16038-2801-7583-977e-36ec595c914e/exec-2733ef9f-0127-4571-aa46-0532014bf9a6.png
+Exported as a 640 x 640 WebP for the repeating country-page background.
+
+Generation prompt:
+Use case: photorealistic-natural
+Asset type: seamless tileable aged paper material for the background of a food travel journal website.
+Primary request: a flat, edge-to-edge, high-resolution square scan of warm antique ivory paper. Fine natural paper fibers, subtle scattered pale tan foxing flecks, softly mottled cream and wheat tones, a few extremely faint worn creases. Looks like a treasured travel journal page, tactile and softly aged, never dirty or burnt.
+Composition: material surface fills the entire square, no paper edges, no objects, no shadows from outside the paper. Seamlessly repeatable on both axes, equal illumination across the entire image, no vignette, no distinctive central mark or large stain.
+Color palette: light warm parchment, base approximately #efe2c5, subtle ivory highlights and restrained light ochre grain. Low contrast so dark text overlaid on it remains very readable.
+Lighting: flat diffuse scanner light.
+Constraints: no text, no handwriting, no symbols, no illustrations, no borders, no watermarks. Produce only the texture.

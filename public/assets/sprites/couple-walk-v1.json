@@ -1,0 +1,366 @@
+{
+  "image": "/assets/sprites/couple-walk-v1.png",
+  "size": {
+    "width": 1536,
+    "height": 1024
+  },
+  "layout": {
+    "columns": 6,
+    "rows": 4,
+    "note": "Use the measured source rectangles below, rather than assuming identical frame positions inside each cell."
+  },
+  "status": "integrated: two-player walking and animated idle",
+  "characters": {
+    "sreya": {
+      "columns": [
+        0,
+        1,
+        2
+      ],
+      "controls": {
+        "up": "KeyW",
+        "left": "KeyA",
+        "down": "KeyS",
+        "right": "KeyD"
+      }
+    },
+    "boyfriend": {
+      "columns": [
+        3,
+        4,
+        5
+      ],
+      "controls": {
+        "up": "ArrowUp",
+        "left": "ArrowLeft",
+        "down": "ArrowDown",
+        "right": "ArrowRight"
+      }
+    }
+  },
+  "directionRows": {
+    "down": 0,
+    "left": 1,
+    "right": 2,
+    "up": 3
+  },
+  "walkSequence": [
+    "step-a",
+    "idle",
+    "step-b",
+    "idle"
+  ],
+  "idleFrame": "idle",
+  "rendering": {
+    "imageSmoothingEnabled": false,
+    "cssImageRendering": "pixelated",
+    "logicalFrame": {
+      "width": 40,
+      "height": 56,
+      "scale": 2,
+      "footAnchor": {
+        "x": 20,
+        "y": 52
+      }
+    }
+  },
+  "frames": {
+    "boyfriend/down/idle": {
+      "source": {
+        "x": 1085,
+        "y": 10,
+        "width": 116,
+        "height": 242
+      },
+      "anchor": {
+        "x": 58.0,
+        "y": 239
+      }
+    },
+    "boyfriend/down/step-a": {
+      "source": {
+        "x": 851,
+        "y": 10,
+        "width": 122,
+        "height": 245
+      },
+      "anchor": {
+        "x": 61.0,
+        "y": 242
+      }
+    },
+    "boyfriend/down/step-b": {
+      "source": {
+        "x": 1324,
+        "y": 13,
+        "width": 119,
+        "height": 242
+      },
+      "anchor": {
+        "x": 59.5,
+        "y": 239
+      }
+    },
+    "boyfriend/left/idle": {
+      "source": {
+        "x": 1082,
+        "y": 265,
+        "width": 106,
+        "height": 240
+      },
+      "anchor": {
+        "x": 53.0,
+        "y": 237
+      }
+    },
+    "boyfriend/left/step-a": {
+      "source": {
+        "x": 834,
+        "y": 265,
+        "width": 134,
+        "height": 237
+      },
+      "anchor": {
+        "x": 67.0,
+        "y": 234
+      }
+    },
+    "boyfriend/left/step-b": {
+      "source": {
+        "x": 1304,
+        "y": 265,
+        "width": 136,
+        "height": 237
+      },
+      "anchor": {
+        "x": 68.0,
+        "y": 234
+      }
+    },
+    "boyfriend/right/idle": {
+      "source": {
+        "x": 1095,
+        "y": 516,
+        "width": 108,
+        "height": 238
+      },
+      "anchor": {
+        "x": 54.0,
+        "y": 235
+      }
+    },
+    "boyfriend/right/step-a": {
+      "source": {
+        "x": 847,
+        "y": 515,
+        "width": 135,
+        "height": 238
+      },
+      "anchor": {
+        "x": 67.5,
+        "y": 235
+      }
+    },
+    "boyfriend/right/step-b": {
+      "source": {
+        "x": 1314,
+        "y": 515,
+        "width": 138,
+        "height": 238
+      },
+      "anchor": {
+        "x": 69.0,
+        "y": 235
+      }
+    },
+    "boyfriend/up/idle": {
+      "source": {
+        "x": 1079,
+        "y": 765,
+        "width": 120,
+        "height": 239
+      },
+      "anchor": {
+        "x": 60.0,
+        "y": 236
+      }
+    },
+    "boyfriend/up/step-a": {
+      "source": {
+        "x": 845,
+        "y": 765,
+        "width": 123,
+        "height": 238
+      },
+      "anchor": {
+        "x": 61.5,
+        "y": 235
+      }
+    },
+    "boyfriend/up/step-b": {
+      "source": {
+        "x": 1324,
+        "y": 768,
+        "width": 118,
+        "height": 235
+      },
+      "anchor": {
+        "x": 59.0,
+        "y": 232
+      }
+    },
+    "sreya/down/idle": {
+      "source": {
+        "x": 322,
+        "y": 27,
+        "width": 131,
+        "height": 228
+      },
+      "anchor": {
+        "x": 65.5,
+        "y": 225
+      }
+    },
+    "sreya/down/step-a": {
+      "source": {
+        "x": 89,
+        "y": 27,
+        "width": 145,
+        "height": 228
+      },
+      "anchor": {
+        "x": 72.5,
+        "y": 225
+      }
+    },
+    "sreya/down/step-b": {
+      "source": {
+        "x": 542,
+        "y": 27,
+        "width": 140,
+        "height": 228
+      },
+      "anchor": {
+        "x": 70.0,
+        "y": 225
+      }
+    },
+    "sreya/left/idle": {
+      "source": {
+        "x": 340,
+        "y": 273,
+        "width": 113,
+        "height": 229
+      },
+      "anchor": {
+        "x": 56.5,
+        "y": 226
+      }
+    },
+    "sreya/left/step-a": {
+      "source": {
+        "x": 86,
+        "y": 276,
+        "width": 141,
+        "height": 226
+      },
+      "anchor": {
+        "x": 70.5,
+        "y": 223
+      }
+    },
+    "sreya/left/step-b": {
+      "source": {
+        "x": 537,
+        "y": 273,
+        "width": 143,
+        "height": 229
+      },
+      "anchor": {
+        "x": 71.5,
+        "y": 226
+      }
+    },
+    "sreya/right/idle": {
+      "source": {
+        "x": 322,
+        "y": 522,
+        "width": 113,
+        "height": 230
+      },
+      "anchor": {
+        "x": 56.5,
+        "y": 227
+      }
+    },
+    "sreya/right/step-a": {
+      "source": {
+        "x": 76,
+        "y": 522,
+        "width": 152,
+        "height": 230
+      },
+      "anchor": {
+        "x": 76.0,
+        "y": 227
+      }
+    },
+    "sreya/right/step-b": {
+      "source": {
+        "x": 536,
+        "y": 521,
+        "width": 145,
+        "height": 231
+      },
+      "anchor": {
+        "x": 72.5,
+        "y": 228
+      }
+    },
+    "sreya/up/idle": {
+      "source": {
+        "x": 319,
+        "y": 769,
+        "width": 124,
+        "height": 229
+      },
+      "anchor": {
+        "x": 62.0,
+        "y": 226
+      }
+    },
+    "sreya/up/step-a": {
+      "source": {
+        "x": 82,
+        "y": 771,
+        "width": 138,
+        "height": 233
+      },
+      "anchor": {
+        "x": 69.0,
+        "y": 230
+      }
+    },
+    "sreya/up/step-b": {
+      "source": {
+        "x": 547,
+        "y": 771,
+        "width": 132,
+        "height": 232
+      },
+      "anchor": {
+        "x": 66.0,
+        "y": 229
+      }
+    }
+  },
+  "notes": "Original PNG preserved without edits. Source rectangles include 3 pixels of padding. Frames are normalized to a shared foot anchor at runtime; WASD and arrow keys control the two characters independently.",
+  "idleAnimation": {
+    "kind": "breathing-and-sway",
+    "cycleSeconds": 4,
+    "upperBodyLiftPixels": 1,
+    "upperBodySwayPixels": 1,
+    "feetAnchored": true,
+    "reducedMotion": "static standing frame"
+  }
+}

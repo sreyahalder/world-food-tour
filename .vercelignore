@@ -1,0 +1,17 @@
+# Upload the Next.js application and its assets, without local runtime state.
+/*
+!/app
+!/components
+!/hooks
+!/lib
+!/public
+!/cloudflare-env.d.ts
+!/next.config.ts
+!/tsconfig.json
+!/postcss.config.mjs
+!/package.json
+!/pnpm-lock.yaml
+!/pnpm-workspace.yaml
+!/.npmrc
+!/vercel.json
+/public/fonts/abc-diatype/*-Trial.woff2

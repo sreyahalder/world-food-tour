@@ -1,0 +1,732 @@
+{
+  "image": "/assets/sprites/couple-v2.png",
+  "size": {
+    "width": 1536,
+    "height": 2048
+  },
+  "status": "walking, dedicated idle, and dragging frames",
+  "characters": {
+    "sreya": {
+      "columns": [
+        0,
+        1,
+        2
+      ],
+      "controls": {
+        "up": "KeyW",
+        "left": "KeyA",
+        "down": "KeyS",
+        "right": "KeyD"
+      }
+    },
+    "boyfriend": {
+      "columns": [
+        3,
+        4,
+        5
+      ],
+      "controls": {
+        "up": "ArrowUp",
+        "left": "ArrowLeft",
+        "down": "ArrowDown",
+        "right": "ArrowRight"
+      }
+    }
+  },
+  "rendering": {
+    "imageSmoothingEnabled": false,
+    "cssImageRendering": "pixelated",
+    "logicalFrame": {
+      "width": 48,
+      "height": 64,
+      "scale": 2,
+      "footAnchor": {
+        "x": 24,
+        "y": 60
+      }
+    }
+  },
+  "layout": {
+    "note": "Original 24 walking frames above; generated 30 drag and idle frames below. Use measured rectangles, not uniform row heights."
+  },
+  "frames": {
+    "boyfriend/down/idle": {
+      "source": {
+        "x": 1085,
+        "y": 10,
+        "width": 116,
+        "height": 242
+      },
+      "anchor": {
+        "x": 58,
+        "y": 239
+      }
+    },
+    "boyfriend/down/step-a": {
+      "source": {
+        "x": 851,
+        "y": 10,
+        "width": 122,
+        "height": 245
+      },
+      "anchor": {
+        "x": 61,
+        "y": 242
+      }
+    },
+    "boyfriend/down/step-b": {
+      "source": {
+        "x": 1324,
+        "y": 13,
+        "width": 119,
+        "height": 242
+      },
+      "anchor": {
+        "x": 59.5,
+        "y": 239
+      }
+    },
+    "boyfriend/left/idle": {
+      "source": {
+        "x": 1082,
+        "y": 265,
+        "width": 106,
+        "height": 240
+      },
+      "anchor": {
+        "x": 53,
+        "y": 237
+      }
+    },
+    "boyfriend/left/step-a": {
+      "source": {
+        "x": 834,
+        "y": 265,
+        "width": 134,
+        "height": 237
+      },
+      "anchor": {
+        "x": 67,
+        "y": 234
+      }
+    },
+    "boyfriend/left/step-b": {
+      "source": {
+        "x": 1304,
+        "y": 265,
+        "width": 136,
+        "height": 237
+      },
+      "anchor": {
+        "x": 68,
+        "y": 234
+      }
+    },
+    "boyfriend/right/idle": {
+      "source": {
+        "x": 1095,
+        "y": 516,
+        "width": 108,
+        "height": 238
+      },
+      "anchor": {
+        "x": 54,
+        "y": 235
+      }
+    },
+    "boyfriend/right/step-a": {
+      "source": {
+        "x": 847,
+        "y": 515,
+        "width": 135,
+        "height": 238
+      },
+      "anchor": {
+        "x": 67.5,
+        "y": 235
+      }
+    },
+    "boyfriend/right/step-b": {
+      "source": {
+        "x": 1314,
+        "y": 515,
+        "width": 138,
+        "height": 238
+      },
+      "anchor": {
+        "x": 69,
+        "y": 235
+      }
+    },
+    "boyfriend/up/idle": {
+      "source": {
+        "x": 1079,
+        "y": 765,
+        "width": 120,
+        "height": 239
+      },
+      "anchor": {
+        "x": 60,
+        "y": 236
+      }
+    },
+    "boyfriend/up/step-a": {
+      "source": {
+        "x": 845,
+        "y": 765,
+        "width": 123,
+        "height": 238
+      },
+      "anchor": {
+        "x": 61.5,
+        "y": 235
+      }
+    },
+    "boyfriend/up/step-b": {
+      "source": {
+        "x": 1324,
+        "y": 768,
+        "width": 118,
+        "height": 235
+      },
+      "anchor": {
+        "x": 59,
+        "y": 232
+      }
+    },
+    "sreya/down/idle": {
+      "source": {
+        "x": 322,
+        "y": 27,
+        "width": 131,
+        "height": 228
+      },
+      "anchor": {
+        "x": 65.5,
+        "y": 225
+      }
+    },
+    "sreya/down/step-a": {
+      "source": {
+        "x": 89,
+        "y": 27,
+        "width": 145,
+        "height": 228
+      },
+      "anchor": {
+        "x": 72.5,
+        "y": 225
+      }
+    },
+    "sreya/down/step-b": {
+      "source": {
+        "x": 542,
+        "y": 27,
+        "width": 140,
+        "height": 228
+      },
+      "anchor": {
+        "x": 70,
+        "y": 225
+      }
+    },
+    "sreya/left/idle": {
+      "source": {
+        "x": 340,
+        "y": 273,
+        "width": 113,
+        "height": 229
+      },
+      "anchor": {
+        "x": 56.5,
+        "y": 226
+      }
+    },
+    "sreya/left/step-a": {
+      "source": {
+        "x": 86,
+        "y": 276,
+        "width": 141,
+        "height": 226
+      },
+      "anchor": {
+        "x": 70.5,
+        "y": 223
+      }
+    },
+    "sreya/left/step-b": {
+      "source": {
+        "x": 537,
+        "y": 273,
+        "width": 143,
+        "height": 229
+      },
+      "anchor": {
+        "x": 71.5,
+        "y": 226
+      }
+    },
+    "sreya/right/idle": {
+      "source": {
+        "x": 322,
+        "y": 522,
+        "width": 113,
+        "height": 230
+      },
+      "anchor": {
+        "x": 56.5,
+        "y": 227
+      }
+    },
+    "sreya/right/step-a": {
+      "source": {
+        "x": 76,
+        "y": 522,
+        "width": 152,
+        "height": 230
+      },
+      "anchor": {
+        "x": 76,
+        "y": 227
+      }
+    },
+    "sreya/right/step-b": {
+      "source": {
+        "x": 536,
+        "y": 521,
+        "width": 145,
+        "height": 231
+      },
+      "anchor": {
+        "x": 72.5,
+        "y": 228
+      }
+    },
+    "sreya/up/idle": {
+      "source": {
+        "x": 319,
+        "y": 769,
+        "width": 124,
+        "height": 229
+      },
+      "anchor": {
+        "x": 62,
+        "y": 226
+      }
+    },
+    "sreya/up/step-a": {
+      "source": {
+        "x": 82,
+        "y": 771,
+        "width": 138,
+        "height": 233
+      },
+      "anchor": {
+        "x": 69,
+        "y": 230
+      }
+    },
+    "sreya/up/step-b": {
+      "source": {
+        "x": 547,
+        "y": 771,
+        "width": 132,
+        "height": 232
+      },
+      "anchor": {
+        "x": 66,
+        "y": 229
+      }
+    },
+    "sreya/drag/left": {
+      "source": {
+        "x": 111,
+        "y": 1043,
+        "width": 143,
+        "height": 211
+      },
+      "anchor": {
+        "x": 71.5,
+        "y": 208
+      },
+      "scale": 0.24516129032258066
+    },
+    "sreya/drag/hold": {
+      "source": {
+        "x": 335,
+        "y": 1044,
+        "width": 140,
+        "height": 210
+      },
+      "anchor": {
+        "x": 70,
+        "y": 207
+      },
+      "scale": 0.24516129032258066
+    },
+    "sreya/drag/right": {
+      "source": {
+        "x": 549,
+        "y": 1043,
+        "width": 141,
+        "height": 211
+      },
+      "anchor": {
+        "x": 70.5,
+        "y": 208
+      },
+      "scale": 0.24516129032258066
+    },
+    "boyfriend/drag/left": {
+      "source": {
+        "x": 848,
+        "y": 1041,
+        "width": 135,
+        "height": 213
+      },
+      "anchor": {
+        "x": 67.5,
+        "y": 210
+      },
+      "scale": 0.2507772020725389
+    },
+    "boyfriend/drag/hold": {
+      "source": {
+        "x": 1071,
+        "y": 1041,
+        "width": 134,
+        "height": 213
+      },
+      "anchor": {
+        "x": 67,
+        "y": 210
+      },
+      "scale": 0.2507772020725389
+    },
+    "boyfriend/drag/right": {
+      "source": {
+        "x": 1290,
+        "y": 1041,
+        "width": 134,
+        "height": 213
+      },
+      "anchor": {
+        "x": 67,
+        "y": 210
+      },
+      "scale": 0.2507772020725389
+    },
+    "sreya/idle/down/rest": {
+      "source": {
+        "x": 101,
+        "y": 1272,
+        "width": 138,
+        "height": 186
+      },
+      "anchor": {
+        "x": 69,
+        "y": 183
+      },
+      "scale": 0.24516129032258066
+    },
+    "sreya/idle/down/breathe": {
+      "source": {
+        "x": 329,
+        "y": 1272,
+        "width": 143,
+        "height": 186
+      },
+      "anchor": {
+        "x": 71.5,
+        "y": 183
+      },
+      "scale": 0.24516129032258066
+    },
+    "sreya/idle/down/blink": {
+      "source": {
+        "x": 556,
+        "y": 1272,
+        "width": 143,
+        "height": 186
+      },
+      "anchor": {
+        "x": 71.5,
+        "y": 183
+      },
+      "scale": 0.24516129032258066
+    },
+    "boyfriend/idle/down/rest": {
+      "source": {
+        "x": 858,
+        "y": 1265,
+        "width": 106,
+        "height": 193
+      },
+      "anchor": {
+        "x": 53,
+        "y": 190
+      },
+      "scale": 0.2507772020725389
+    },
+    "boyfriend/idle/down/breathe": {
+      "source": {
+        "x": 1083,
+        "y": 1265,
+        "width": 106,
+        "height": 193
+      },
+      "anchor": {
+        "x": 53,
+        "y": 190
+      },
+      "scale": 0.2507772020725389
+    },
+    "boyfriend/idle/down/blink": {
+      "source": {
+        "x": 1306,
+        "y": 1265,
+        "width": 106,
+        "height": 193
+      },
+      "anchor": {
+        "x": 53,
+        "y": 190
+      },
+      "scale": 0.2507772020725389
+    },
+    "sreya/idle/left/rest": {
+      "source": {
+        "x": 117,
+        "y": 1472,
+        "width": 114,
+        "height": 191
+      },
+      "anchor": {
+        "x": 57,
+        "y": 188
+      },
+      "scale": 0.23979057591623038
+    },
+    "sreya/idle/left/breathe": {
+      "source": {
+        "x": 348,
+        "y": 1472,
+        "width": 110,
+        "height": 191
+      },
+      "anchor": {
+        "x": 55,
+        "y": 188
+      },
+      "scale": 0.23979057591623038
+    },
+    "sreya/idle/left/blink": {
+      "source": {
+        "x": 572,
+        "y": 1472,
+        "width": 115,
+        "height": 191
+      },
+      "anchor": {
+        "x": 57.5,
+        "y": 188
+      },
+      "scale": 0.23979057591623038
+    },
+    "boyfriend/idle/left/rest": {
+      "source": {
+        "x": 858,
+        "y": 1468,
+        "width": 100,
+        "height": 194
+      },
+      "anchor": {
+        "x": 50,
+        "y": 191
+      },
+      "scale": 0.24742268041237114
+    },
+    "boyfriend/idle/left/breathe": {
+      "source": {
+        "x": 1083,
+        "y": 1468,
+        "width": 100,
+        "height": 194
+      },
+      "anchor": {
+        "x": 50,
+        "y": 191
+      },
+      "scale": 0.24742268041237114
+    },
+    "boyfriend/idle/left/blink": {
+      "source": {
+        "x": 1308,
+        "y": 1468,
+        "width": 100,
+        "height": 194
+      },
+      "anchor": {
+        "x": 50,
+        "y": 191
+      },
+      "scale": 0.24742268041237114
+    },
+    "sreya/idle/right/rest": {
+      "source": {
+        "x": 102,
+        "y": 1672,
+        "width": 121,
+        "height": 185
+      },
+      "anchor": {
+        "x": 60.5,
+        "y": 182
+      },
+      "scale": 0.24864864864864866
+    },
+    "sreya/idle/right/breathe": {
+      "source": {
+        "x": 332,
+        "y": 1672,
+        "width": 117,
+        "height": 185
+      },
+      "anchor": {
+        "x": 58.5,
+        "y": 182
+      },
+      "scale": 0.24864864864864866
+    },
+    "sreya/idle/right/blink": {
+      "source": {
+        "x": 560,
+        "y": 1672,
+        "width": 120,
+        "height": 185
+      },
+      "anchor": {
+        "x": 60,
+        "y": 182
+      },
+      "scale": 0.24864864864864866
+    },
+    "boyfriend/idle/right/rest": {
+      "source": {
+        "x": 863,
+        "y": 1667,
+        "width": 102,
+        "height": 190
+      },
+      "anchor": {
+        "x": 51,
+        "y": 187
+      },
+      "scale": 0.2505263157894737
+    },
+    "boyfriend/idle/right/breathe": {
+      "source": {
+        "x": 1087,
+        "y": 1667,
+        "width": 103,
+        "height": 190
+      },
+      "anchor": {
+        "x": 51.5,
+        "y": 187
+      },
+      "scale": 0.2505263157894737
+    },
+    "boyfriend/idle/right/blink": {
+      "source": {
+        "x": 1311,
+        "y": 1667,
+        "width": 103,
+        "height": 190
+      },
+      "anchor": {
+        "x": 51.5,
+        "y": 187
+      },
+      "scale": 0.2505263157894737
+    },
+    "sreya/idle/up/rest": {
+      "source": {
+        "x": 104,
+        "y": 1863,
+        "width": 133,
+        "height": 177
+      },
+      "anchor": {
+        "x": 66.5,
+        "y": 174
+      },
+      "scale": 0.2587570621468927
+    },
+    "sreya/idle/up/breathe": {
+      "source": {
+        "x": 334,
+        "y": 1862,
+        "width": 129,
+        "height": 178
+      },
+      "anchor": {
+        "x": 64.5,
+        "y": 175
+      },
+      "scale": 0.2587570621468927
+    },
+    "sreya/idle/up/blink": {
+      "source": {
+        "x": 560,
+        "y": 1863,
+        "width": 132,
+        "height": 177
+      },
+      "anchor": {
+        "x": 66,
+        "y": 174
+      },
+      "scale": 0.2587570621468927
+    },
+    "boyfriend/idle/up/rest": {
+      "source": {
+        "x": 858,
+        "y": 1859,
+        "width": 103,
+        "height": 180
+      },
+      "anchor": {
+        "x": 51.5,
+        "y": 177
+      },
+      "scale": 0.2655555555555556
+    },
+    "boyfriend/idle/up/breathe": {
+      "source": {
+        "x": 1084,
+        "y": 1859,
+        "width": 105,
+        "height": 180
+      },
+      "anchor": {
+        "x": 52.5,
+        "y": 177
+      },
+      "scale": 0.2655555555555556
+    },
+    "boyfriend/idle/up/blink": {
+      "source": {
+        "x": 1308,
+        "y": 1859,
+        "width": 104,
+        "height": 180
+      },
+      "anchor": {
+        "x": 52,
+        "y": 177
+      },
+      "scale": 0.2655555555555556
+    }
+  }
+}

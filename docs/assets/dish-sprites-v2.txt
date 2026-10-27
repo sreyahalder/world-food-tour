@@ -1,0 +1,34 @@
+World Food Tour dish sprites, v2
+
+Asset: public/assets/dish-stickers/dish-sprites-v2.png
+Method: built-in image_gen imagegen tool, original generated PNG preserved.
+Source size: 1448 × 1086, RGBA with true transparency.
+Reference: user's pixel food icon sheet, plus their uploaded Albanian mixed-grill and soup photos.
+Layout: four columns, three rows, eleven dishes and an empty plate fallback.
+Order: Kabuli pulao, mantu, bolani, byrek; tavë kosi, fërgesë, couscous, chakhchoukha; mhadjeb, Albanian mixed grill, Albanian soup, plate.
+
+The app reads measured crop coordinates from lib/dish-sprite-atlas.ts and crops each sprite into a canvas at its original resolution. Color and alpha are preserved, with no additional pixelation or opacity threshold. Normal browser scaling fits the artwork into a 64-pixel sticker, partly overlapping the photo's top-left corner. The original atlas is not modified. There is no badge backing or CSS shadow. The older dish-sprites-v2-rendered.png contact sheet documents the superseded 32-pixel rendering.
+
+Existing SVG assets are retained as v1 references. The nine cuisine-guide entries and four uploaded NYC dishes use the new atlas. Known names are assigned automatically on upload. An unrecognized dish uses the transparent empty-plate placeholder until a matching illustration is added. New photo uploads are no longer converted into pixel-photo badges.
+
+Generation prompt:
+Use case: stylized-concept. Asset type: a SINGLE transparent pixel-food sprite atlas for a retro game interface.
+Image 1 is the STYLE reference. Images 2 and 3 are CONTENT references only for the mixed-meat and soup icons. Do not reproduce any text or people.
+Create a landscape atlas of exactly 12 small food sprites in a strict grid of 4 columns × 3 rows. The canvas is 4:3 aspect, ideally 1536x1152. All twelve equal cells are square. Each individual object occupies at most 60 percent of its cell width and height. There must be a wide fully transparent empty gutter around EVERY object. Nothing touches adjacent cells.
+Match the original reference image's LOW RESOLUTION 32x32 pixel art exactly in spirit: small pixel clusters, 1-pixel outline, modest pixel detail, 12–20 colors per sprite, 3 shades per material, warm ochre/brown highlights and cream plate pixels. Draw as if each complete sprite fits within only 32 by 32 real game pixels, enlarged with hard square nearest-neighbor pixels. Do not draw high-resolution or photoreal food with hundreds of tiny detail pixels. No anti-aliasing or smooth vector curves. Slightly elevated three-quarter view consistently.
+Row 1 in order:
+1 Kabuli pulao: golden rice mound, orange carrot strips, dark raisins, a browned lamb shank, on an ivory oval plate.
+2 Mantu: five pleated cream dumplings, yogurt and red sauce accents, tiny green herbs, on an ivory plate.
+3 Bolani: two thin golden triangular stuffed flatbreads with green filling, on an ivory plate.
+4 Byrek: two golden flaky pastry wedges with spinach and white cheese layers, on an ivory plate.
+Row 2 in order:
+5 Tave kosi: golden baked yogurt custard with browned lamb chunks in an oval terracotta casserole.
+6 Fergese: red pepper-tomato stew with white cheese cubes in a terracotta bowl.
+7 Couscous: pale gold grains, carrot, zucchini, chickpeas in an ivory bowl.
+8 Chakhchoukha: torn golden flatbread chunks with red stew, chickpeas and lamb in a rustic bowl.
+Row 3 in order:
+9 Mhadjeb: two browned golden rectangular folded flatbreads, one cut edge with red tomato-onion filling, on an ivory plate.
+10 Albanian mixed grill: use Image 2's lower wooden board as the content reference. Small grilled beef patty, sausage, chicken, potato wedges and red/green grilled vegetables on a rectangular wood serving board. No soup or table included.
+11 Albanian soup: use Image 3's soup as content reference. Rustic golden handled metal pan of reddish orange broth with a single browned meat piece. No bread, spoon, serving board or table included.
+12 Empty ivory ceramic dinner plate: the same physical oval perspective plate used elsewhere, a fallback game item icon. No food.
+ALL BACKGROUND MUST BE ACTUAL TRANSPARENT ALPHA ZERO. Transparency surrounds each natural food/plate silhouette. NO cream sticker badge, NO white border or halo around the object, NO circle behind it, NO paper backdrop, NO gray fill, NO checkerboard pattern, NO text, NO letters, NO grid, NO numbers, NO shadows outside the objects. The only white is the physical dishware. Large transparent margins are essential so each sprite can be independently cropped.

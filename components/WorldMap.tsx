@@ -1,34 +1,73 @@
 'use client';
-import {useCallback,useEffect,useRef,useState} from 'react';
-import type {KeyboardEvent,PointerEvent} from 'react';
+import {useCallback,useEffect,useLayoutEffect,useRef,useState} from 'react';
+import type {CSSProperties,KeyboardEvent,PointerEvent} from 'react';
 import {Minus,Plus,RotateCcw} from 'lucide-react';
 import {Country} from '../lib/types';
 import {constrainView,fitViewport,INITIAL_VIEW,MAP_HEIGHT,MAP_WIDTH,MAX_ZOOM,MIN_ZOOM,zoomView} from '../lib/map-view';
 import type {MapView,Point} from '../lib/map-view';
+import {foodMarkersVisible,type WorldFoodMarker} from '../lib/world-food-markers';
+import DishSticker from './DishSticker';
 
 type MapPath={code:string;name:string;d:string};
 const midpoint=(a:Point,b:Point):Point=>({x:(a.x+b.x)/2,y:(a.y+b.y)/2});
 const distance=(a:Point,b:Point)=>Math.hypot(a.x-b.x,a.y-b.y);
 
-export default function WorldMap({countries,visited,onSelect,next}:{countries:Country[];visited:Set<string>;onSelect:(c:string)=>void;next?:string}){
+export default function WorldMap({countries,visited,foods=[],onSelect}:{countries:Country[];visited:Set<string>;foods?:WorldFoodMarker[];onSelect:(c:string)=>void}){
   const [paths,setPaths]=useState<MapPath[]>([]);
   const [hover,setHover]=useState('');
   const [error,setError]=useState(false);
   const [view,setView]=useState<MapView>(INITIAL_VIEW);
   const [viewport,setViewport]=useState(()=>fitViewport(MAP_WIDTH,MAP_HEIGHT));
   const [dragging,setDragging]=useState(false);
+  const [showFood,setShowFood]=useState(false);
+  const [mapUnitsPerPixel,setMapUnitsPerPixel]=useState(1);
   const svgRef=useRef<SVGSVGElement>(null);
   const frameRef=useRef<HTMLDivElement>(null);
+  const labelRef=useRef<HTMLDivElement>(null);
+  const labelAnchor=useRef<Point>({x:0,y:0});
   const viewRef=useRef(view),viewportRef=useRef(viewport);
   const pointers=useRef(new Map<number,Point>());
   const gesture=useRef({origin:{x:0,y:0},moved:false,code:''});
   const codes=new Set(countries.map(c=>c.code));
 
   const commit=useCallback((value:MapView)=>{
+    setHover('');
     const bounded=constrainView(value,viewportRef.current);
     viewRef.current=bounded;
     setView(bounded);
   },[]);
+
+  const positionLabel=useCallback(()=>{
+    const frame=frameRef.current,label=labelRef.current;
+    if(!frame||!label)return;
+    const bounds=frame.getBoundingClientRect();
+    const halfWidth=label.offsetWidth/2;
+    const x=Math.max(halfWidth+8,Math.min(bounds.width-halfWidth-8,labelAnchor.current.x-bounds.left));
+    const y=Math.min(bounds.height-8,Math.max(label.offsetHeight+8,labelAnchor.current.y-bounds.top-14));
+    label.style.left=`${x}px`;
+    label.style.top=`${y}px`;
+  },[]);
+
+  useLayoutEffect(positionLabel,[hover,positionLabel]);
+
+  useEffect(()=>{
+    setShowFood(visible=>foodMarkersVisible(view.scale,visible));
+  },[view.scale]);
+
+  useEffect(()=>{
+    if(!showFood&&document.activeElement?.closest('.world-food-marker'))svgRef.current?.focus({preventScroll:true});
+  },[showFood]);
+
+  function showLabel(name:string,point:Point){
+    labelAnchor.current=point;
+    setHover(name);
+    positionLabel();
+  }
+
+  function focusCountry(name:string,element:SVGElement){
+    const bounds=element.getBoundingClientRect();
+    showLabel(name,{x:bounds.left+bounds.width/2,y:bounds.top});
+  }
 
   const toMapPoint=useCallback((client:Point):Point=>{
     const svg=svgRef.current;
@@ -56,6 +95,7 @@ export default function WorldMap({countries,visited,onSelect,next}:{countries:Co
       const nextViewport=fitViewport(width,height);
       viewportRef.current=nextViewport;
       setViewport(nextViewport);
+      setMapUnitsPerPixel(nextViewport.width/width);
       commit(viewRef.current);
     });
     observer.observe(frame);
@@ -81,6 +121,7 @@ export default function WorldMap({countries,visited,onSelect,next}:{countries:Co
 
   function pointerDown(event:PointerEvent<SVGSVGElement>){
     if(event.button!==0)return;
+    setHover('');
     const point={x:event.clientX,y:event.clientY};
     if(!pointers.current.size){
       const code=(event.target as Element).closest('[data-country]')?.getAttribute('data-country')||'';
@@ -96,7 +137,12 @@ export default function WorldMap({countries,visited,onSelect,next}:{countries:Co
 
   function pointerMove(event:PointerEvent<SVGSVGElement>){
     const previous=pointers.current.get(event.pointerId);
-    if(!previous)return;
+    if(!previous){
+      const name=(event.target as Element).closest('[data-country-label]')?.getAttribute('data-country-label');
+      if(name&&event.pointerType!=='touch'&&!pointers.current.size)showLabel(name,{x:event.clientX,y:event.clientY});
+      else setHover('');
+      return;
+    }
     const point={x:event.clientX,y:event.clientY};
     const before=[...pointers.current.values()];
     pointers.current.set(event.pointerId,point);
@@ -138,11 +184,17 @@ export default function WorldMap({countries,visited,onSelect,next}:{countries:Co
     if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();onSelect(code)}
   }
 
-  return <div ref={frameRef} className={`world-svg${dragging?' is-dragging':''}`}>
+  return <div ref={frameRef} data-walk-map="world" className={`world-svg${dragging?' is-dragging':''}`}>
     <svg ref={svgRef} viewBox={`${viewport.x} ${viewport.y} ${viewport.width} ${viewport.height}`} aria-label="World food tour map. Drag to pan, scroll or pinch to zoom. Use plus and minus to zoom, arrow keys to pan, and Home to reset." role="group" tabIndex={0} onKeyDown={keyboard} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={e=>pointerEnd(e)} onPointerCancel={e=>pointerEnd(e,true)} onLostPointerCapture={e=>pointerEnd(e,true)} onPointerLeave={()=>setHover('')}>
       <g transform={`translate(${view.x} ${view.y}) scale(${view.scale})`}>
-        {paths.map((p,i)=><path key={`${p.code}-${i}`} d={p.d} fill={visited.has(p.code)?'#e2bc6f':p.code===next?'#c8db79':'#6f9c4c'} stroke="#284b38" strokeWidth=".65" vectorEffect="non-scaling-stroke" role={codes.has(p.code)?'button':undefined} tabIndex={codes.has(p.code)?0:undefined} data-country={codes.has(p.code)?p.code:undefined} aria-label={`${p.name}${codes.has(p.code)?`: ${visited.has(p.code)?'visited':'to explore'}`:''}`} className={codes.has(p.code)?'map-country':''} onPointerEnter={()=>{if(!pointers.current.size)setHover(p.name)}} onFocus={()=>setHover(p.name)} onBlur={()=>setHover('')} onClick={e=>{if(e.detail===0&&codes.has(p.code))onSelect(p.code)}} onKeyDown={e=>{if(codes.has(p.code))countryKey(e,p.code)}}><title>{p.name}{codes.has(p.code)?` · ${visited.has(p.code)?'Visited':'To explore'}`:''}</title></path>)}
-        {countries.filter(c=>!paths.some(p=>p.code===c.code&&p.d.length>0)).map(c=><circle key={c.code} cx={(c.lng+180)*2.65} cy={(85-c.lat)*3.05} r={Math.max(1,2.4/Math.sqrt(view.scale))} fill={visited.has(c.code)?'#e2bc6f':c.code===next?'#c8db79':'#6f9c4c'} stroke="#284b38" strokeWidth=".65" vectorEffect="non-scaling-stroke" className="map-country" role="button" tabIndex={0} data-country={c.code} aria-label={c.name} onPointerEnter={()=>{if(!pointers.current.size)setHover(c.name)}} onFocus={()=>setHover(c.name)} onBlur={()=>setHover('')} onClick={e=>{if(e.detail===0)onSelect(c.code)}} onKeyDown={e=>countryKey(e,c.code)}><title>{c.name}</title></circle>)}
+        {paths.map((p,i)=><path key={`${p.code}-${i}`} d={p.d} fill={visited.has(p.code)?'#e2bc6f':'#6f9c4c'} stroke="#284b38" strokeWidth=".65" vectorEffect="non-scaling-stroke" role={codes.has(p.code)?'button':undefined} tabIndex={codes.has(p.code)?0:undefined} data-country={codes.has(p.code)?p.code:undefined} data-country-label={p.name} data-walk-visited={visited.has(p.code)} aria-label={`${p.name}${codes.has(p.code)?`: ${visited.has(p.code)?'visited':'to explore'}`:''}`} className={codes.has(p.code)?'map-country':''} onFocus={e=>focusCountry(p.name,e.currentTarget)} onBlur={()=>setHover('')} onClick={e=>{if(e.detail===0&&codes.has(p.code))onSelect(p.code)}} onKeyDown={e=>{if(codes.has(p.code))countryKey(e,p.code)}}/>)}
+        {countries.filter(c=>!paths.some(p=>p.code===c.code&&p.d.length>0)).map(c=><circle key={c.code} cx={(c.lng+180)*2.65} cy={(85-c.lat)*3.05} r={Math.max(1,2.4/Math.sqrt(view.scale))} fill={visited.has(c.code)?'#e2bc6f':'#6f9c4c'} stroke="#284b38" strokeWidth=".65" vectorEffect="non-scaling-stroke" className="map-country" role="button" tabIndex={0} data-country={c.code} data-country-label={c.name} data-walk-visited={visited.has(c.code)} aria-label={c.name} onFocus={e=>focusCountry(c.name,e.currentTarget)} onBlur={()=>setHover('')} onClick={e=>{if(e.detail===0)onSelect(c.code)}} onKeyDown={e=>countryKey(e,c.code)}/>)}
+        {foods.map((food,index)=><g key={food.country} transform={`translate(${food.x} ${food.y}) scale(${mapUnitsPerPixel/view.scale})`} className="world-food-marker" data-visible={showFood} data-country={food.country} data-walk-visited={visited.has(food.country)} data-country-label={`${food.countryName} · ${food.name}`} role="button" tabIndex={showFood?0:-1} aria-hidden={!showFood} aria-label={`${food.countryName}: ${food.name}. Open country.`} onFocus={e=>focusCountry(`${food.countryName} · ${food.name}`,e.currentTarget)} onBlur={()=>setHover('')} onClick={e=>{if(e.detail===0&&showFood)onSelect(food.country)}} onKeyDown={e=>{if(showFood)countryKey(e,food.country)}}>
+          <rect x={-26} y={-26} width={52} height={52} fill="transparent"/>
+          <foreignObject x={-26} y={-26} width={52} height={52} pointerEvents="none">
+            <div className="world-food-symbol" style={{'--food-delay':`${Math.min(index*22,160)}ms`} as CSSProperties}><DishSticker name={food.name} src={food.sticker}/></div>
+          </foreignObject>
+        </g>)}
       </g>
     </svg>
     <div className="world-zoom" role="group" aria-label="Map zoom controls">
@@ -150,6 +202,7 @@ export default function WorldMap({countries,visited,onSelect,next}:{countries:Co
       <button aria-label="Zoom out" title="Zoom out" disabled={view.scale<=MIN_ZOOM} onClick={()=>zoom(1/1.4)}><Minus size={18}/></button>
       <button aria-label="Reset map view" title="Reset map view" onClick={()=>commit(INITIAL_VIEW)}><RotateCcw size={16}/></button>
     </div>
-    {(error||hover)&&<div className="world-hint" role="status">{error?'Map unavailable. Use the country list.':hover}</div>}
+    {hover&&!error&&<div ref={labelRef} className="world-country-label" role="tooltip">{hover}</div>}
+    {error&&<div className="world-hint" role="status">Map unavailable. Use the country list.</div>}
   </div>;
 }

@@ -1,0 +1,83 @@
+.dish-sticker {
+  position: absolute;
+  top: -20px;
+  left: -16px;
+  width: 64px;
+  height: 64px;
+  transform: rotate(-8deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dish-sticker > img,
+.dish-sticker > canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.media-cover.media-dish,
+.visual-dishes .dish-card { overflow: visible; }
+
+.visual-dishes { align-items: start; }
+
+.dish-photo-preview { position: relative; width: 72px; height: 64px; flex: 0 0 auto; }
+.dish-photo-preview > img { width: 100%; height: 100%; object-fit: cover; }
+.dish-photo-preview .dish-sticker { width: 32px; height: 32px; top: -6px; left: -6px; }
+.dish-upload .dish-sticker > img { width: 100%; height: 100%; }
+.dish-sticker-preview { position: relative; width: 64px; height: 64px; }
+.dish-sticker-preview .dish-sticker { inset: 0; width: 64px; height: 64px; }
+
+.dish-stickers {
+  position: absolute;
+  top: -20px;
+  left: -16px;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dish-stickers > .dish-sticker {
+  position: relative;
+  inset: auto;
+  flex: 0 0 64px;
+}
+
+.dish-stickers > .dish-sticker:nth-child(even) { transform: rotate(6deg); }
+
+.dish-collected-check {
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #263a29;
+  background: #e1e8c8;
+  color: #263a29;
+  box-shadow: 2px 2px 0 #263a2944;
+  font: 700 14px/1 monospace;
+}
+
+.dish-card-shared .media-dish { aspect-ratio: auto; }
+.dish-card-shared .media-dish > img { height: auto; }
+
+.shared-dish-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shared-dish-list > li + li {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.dish-copy .shared-dish-list h3 { font-size: 23px; margin-bottom: 6px; }

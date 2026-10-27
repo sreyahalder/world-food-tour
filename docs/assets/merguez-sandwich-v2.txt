@@ -1,0 +1,21 @@
+Merguez sandwich illustration v2, October 21, 2026
+
+Created with the built-in image-generation tool.
+Saved asset: public/assets/dish-stickers/merguez-sandwich-v2.png
+Original output: /Users/sreyahalder/.codex/generated_images/01a16038-2801-7583-977e-36ec595c914e/exec-817d4d36-150f-41c4-9793-3ce146551c92.png
+Style reference: /var/folders/1f/fkwjgxxs2nqc0mhcnty6296r0000gn/T/codex-clipboard-d2f3c0fa-2915-4ad8-ab91-a161cfad9003.png
+Edit target: public/assets/dish-stickers/merguez-sandwich-v1.png
+
+The illustration itself was redrawn with chunky square pixel clusters, stepped outlines, and simpler shading. The generated PNG is copied unchanged with its original alpha. No runtime pixelation filter or reduction is applied. Existing top-left overhang and 8-degree counterclockwise rotation remain. Merguez sandwich names and older saved v1 references now use this v2 asset. The original v1 remains available.
+
+Final prompt:
+Use case: style-transfer.
+Asset: replacement transparent pixel-art merguez sandwich sticker for a cozy 16-bit food game.
+Image 1 is the user's EXACT pixel-art style reference. Image 2 is the existing sandwich illustration to redraw. Match image 1's individual food icons, not image 2's overly detailed rendering.
+
+Redraw the sandwich with clearly visible square pixel clusters, stepped edges, strong dark-brown 1-pixel contour, a small warm palette, and 3 to 4 discrete shades per ingredient. Treat the whole sandwich as a carefully hand-sprited approximately 96-pixel-wide game inventory icon, enlarged with crisp square pixels. All small highlights and texture must be intentional chunky pixels. No smooth gradients, tiny grain, realistic bread pores, glossy rendering, soft anti-aliasing, painterly texture, or continuous curves. The art itself should be authentically pixelated, not a detailed painting behind a pixel filter.
+
+Preserve the recognizable subject from image 2: one golden baguette sandwich with a cut end revealing TWO reddish-brown merguez sausage ends, a few thick golden fries, red tomato and small green lettuce shapes. Plain cream paper wraps the back half. Simplify the shapes substantially while keeping the food appetizing. The sausage interiors need only a few pixel flecks, and paper folds should be angular flat-color bands.
+Composition: single complete sandwich, centered, slightly elevated three-quarter view, cut end facing the viewer, mostly horizontal. Fill about 85% of the width, leaving clean transparent margins. No added plate, no hands, no other dishes.
+Output one square PNG with genuine RGBA transparency, fully transparent background outside the silhouette. No black or white background, checkerboard, text, badge, label, cast shadow or surrounding sticker outline. The provided reference's dark surrounding area represents transparency and must stay transparent.
+

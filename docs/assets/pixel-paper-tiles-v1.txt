@@ -1,0 +1,37 @@
+Pixel parchment tile design, version 1
+
+Selected design: public/assets/textures/pixel-paper-tiles-v1-design.png
+Generated using the built-in image-generation tool on 2026-10-21.
+Source: /Users/sreyahalder/.codex/generated_images/01a16038-2801-7583-977e-36ec595c914e/exec-38e67f83-42c1-42a1-b934-ec241b56583f.png
+
+Purpose
+Stored pixel-art paper material for the country-page game journal. The live page reads this PNG through public/assets/textures/pixel-paper-tiles-v1.json. lib/paper-tiles.ts crops the 16 source rectangles, removes dark green review gutters, samples each tile to 32 x 32 pixels, and maps it to six flat colors. The original generated image stays unchanged.
+
+Runtime rendering
+Tiles repeat at four screen pixels per material pixel with smoothing disabled. Center, grain, crease, border and corner variants compose the background. The lighter palette is #fbf6e6, #f4ecd5, #e7d8b3, #d3bd91, #b19466 and #56462f. The resting page and opening animation share the same painted canvas. The animation opens in staggered square sections using GSAP steps, then hands off in under 600 ms. Reduced-motion users see the static material immediately.
+
+Validation
+All source rectangles are within the PNG. Fill samples contain no green gutter pixels, and 99 percent map to the two lightest shades. Unit checks cover section coverage, final alignment, integer-pixel movement and duration. Full browser visual verification remains unavailable in this session.
+
+Tile order (left to right)
+Row 1: upper-left corner, top edge, upper-right corner, plain ivory fill.
+Row 2: left edge, sparse grain fill, right edge, flecked fill.
+Row 3: lower-left corner, bottom edge, lower-right corner, vertical crease.
+Row 4: nicked top edge, nicked bottom edge, diagonal crease, alternate fill.
+
+Design direction
+Light warm ivory, restrained tan wear, dark brown pixel outlines. Keep the center of the reading surface quiet; use crease and fleck variants sparingly. The stored tile atlas is shared by the country page and the uncrumple animation.
+
+Final generation prompt
+Use case: stylized-concept.
+Create a CLEAN 4 by 4 pixel-art tile design sheet for an old-paper video game menu. Sixteen separate square tiles, equal size, perfectly aligned in four rows and four columns, with uniform wide gutters and margins. Show it on a completely solid matte dark forest green background #263323. The image is fully opaque. NO transparency, NO cutout processing, NO white fringes, NO glow, NO shadows.
+
+Use crisp hand-placed square pixels, like a 32x32 game texture enlarged with nearest neighbor. Flat colors only. Quiet LIGHT WARM IVORY paper #F8F2E2, pale cream #EEE4CB details, muted tan #CEB88B edge wear, and a slim dark brown #51422E pixel ink border. Very restrained sparse grain. No smooth gradients, no blur, no photograph. The center of every tile remains very pale and 95 percent blank for readable text. The worn edges are narrow, with tiny stair-step chips and scratches, never thick burnt borders.
+
+Exact grid:
+Top row: upper-left paper corner; straight top paper edge; upper-right paper corner; plain ivory fill.
+Second row: left paper edge; sparse grain ivory fill; right paper edge; slightly flecked ivory fill.
+Third row: lower-left paper corner; straight bottom paper edge; lower-right paper corner; ivory fill with a very faint vertical pixel crease.
+Fourth row: top edge with a tiny square nick; bottom edge with a tiny square nick; ivory fill with a faint diagonal stair-step crease; quiet nearly blank ivory fill.
+
+A corner tile has border artwork only on its two OUTER sides, and open plain ivory on the sides that would meet another tile. A straight-edge tile has border artwork only on its named outer side. Fill tiles are flat plain squares without outlines. Outside the worn paper edge, show exactly the same solid forest green as the gutters. Matching art scale and compatible boundary positions across all pieces. This is a clear material asset study for a cozy retro adventure journal, not sixteen little complete framed pages. No text, no letters, no labels, no numbers, no icons, no page content, no embellishments. Square composition.

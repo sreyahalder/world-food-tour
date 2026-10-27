@@ -1,0 +1,252 @@
+/* Keep these scoped to the map so Leaflet's default stylesheet cannot win. */
+.nyc-map .photo-map-marker {
+  background: transparent;
+  border: 0;
+}
+
+.map-photo-pin {
+  --pin-rim: #fff3d5;
+  --pin-green: #72886a;
+  position: relative;
+  isolation: isolate;
+  width: 48px;
+  height: 57px;
+  filter: drop-shadow(1px 2px 0 #352d2959);
+  transition: filter 140ms ease;
+}
+
+.map-photo-pin.is-visited {
+  --pin-green: #7e9f51;
+}
+
+.nyc-map .map-photo-pin-frame {
+  position: absolute;
+  inset: 0;
+  /* Override Leaflet's SVG z-index so the green frame stays behind the photo. */
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.map-photo-pin-shell {
+  fill: var(--pin-rim);
+  stroke: #493e32;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.map-photo-pin-inset {
+  fill: var(--pin-green);
+  stroke: #4f653d;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.nyc-map .photo-map-marker .map-photo-pin img {
+  box-sizing: border-box;
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  z-index: 1;
+  display: block;
+  width: 34px;
+  height: 34px;
+  max-width: none;
+  border: 1px solid #354b3259;
+  border-radius: 50%;
+  background: #efe2c5;
+  object-fit: cover;
+}
+
+.photo-map-marker:hover .map-photo-pin,
+.photo-map-marker:focus-visible .map-photo-pin,
+.map-photo-pin.is-open {
+  --pin-rim: #fff9e9;
+  --pin-green: #96b963;
+  filter: drop-shadow(1px 2px 0 #352d2966);
+}
+
+.nyc-map .photo-map-marker:focus-visible {
+  outline: 2px solid #fff3d5;
+  outline-offset: 4px;
+  border-radius: 24px 24px 14px 14px;
+}
+
+.nyc-map .map-place-popup {
+  --popup-paper: #f6f5f1;
+  --popup-ink: #292a27;
+  --popup-muted: #43483c;
+  --popup-line: #58634d;
+  margin-bottom: 10px;
+  color: var(--popup-ink);
+  font-family: var(--ui);
+}
+
+.nyc-map .map-place-popup .leaflet-popup-content-wrapper {
+  box-sizing: border-box;
+  padding: 0;
+  border: 2px solid var(--popup-line);
+  border-radius: 8px;
+  background: var(--popup-paper);
+  color: var(--popup-ink);
+  box-shadow: 3px 3px 0 #252a2033;
+}
+
+.nyc-map .map-place-popup .leaflet-popup-content {
+  margin: 0;
+  font: 400 12px/1.4 var(--ui);
+}
+
+.nyc-map .map-place-card {
+  padding: 12px;
+  text-align: left;
+}
+
+.nyc-map .map-place-popup .map-place-country {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0;
+  padding-right: 20px;
+  color: var(--popup-ink);
+  font: 600 16px/1.25 var(--serif);
+  letter-spacing: -.02em;
+  overflow-wrap: anywhere;
+}
+
+.nyc-map .map-place-country > span { min-width: 0; }
+
+.nyc-map .map-place-country .map-place-flag {
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.nyc-map .map-place-popup .map-place-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin: 5px 0 0;
+  color: var(--popup-muted);
+  font: 500 12px/1.3 var(--ui);
+  overflow-wrap: anywhere;
+}
+
+.nyc-map .map-place-title .map-place-location-icon {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  image-rendering: pixelated;
+}
+
+.nyc-map .map-place-title > span { min-width: 0; }
+
+.nyc-map .map-place-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 30px;
+  margin-top: 10px;
+  padding: 6px 8px;
+  border: 1px solid #d5dbce;
+  border-radius: 4px!important;
+  background: #e9ece5;
+  color: #46523f;
+  box-shadow: none;
+  font: 500 12px/1.25 var(--ui);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.nyc-map .map-place-link:hover {
+  background: #dfe5d8;
+  color: #293326;
+}
+
+.nyc-map .map-place-link:active {
+  transform: translateY(1px);
+  background: #d5decc;
+}
+
+.nyc-map .map-place-popup .leaflet-popup-close-button {
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 4px;
+  color: var(--popup-muted);
+  font: 400 18px/1 var(--ui);
+}
+
+.nyc-map .map-place-popup .leaflet-popup-close-button:hover {
+  border-color: var(--popup-line);
+  background: #e9ece5;
+  color: var(--popup-ink);
+}
+
+.nyc-map .map-place-link:focus-visible,
+.nyc-map .map-place-popup .leaflet-popup-close-button:focus-visible {
+  outline: 2px solid #7d8d78;
+  outline-offset: 2px;
+}
+
+.nyc-map .map-place-popup .leaflet-popup-tip-container {
+  height: 14px;
+  margin-top: -1px;
+}
+
+.nyc-map .map-place-popup .leaflet-popup-tip {
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  margin-top: -7px;
+  padding: 1px;
+  border: 2px solid var(--popup-line);
+  background: var(--popup-paper);
+  box-shadow: none;
+}
+
+/* Leaflet writes inline opacity for its fade. Keep this popup fully opaque,
+   and move its children so Leaflet's geographic positioning stays untouched. */
+.nyc-map.leaflet-fade-anim .map-place-popup {
+  opacity: 1!important;
+  transition: none;
+}
+
+.nyc-map .map-place-popup > .leaflet-popup-content-wrapper,
+.nyc-map .map-place-popup > .leaflet-popup-tip-container,
+.nyc-map .map-place-popup > .leaflet-popup-close-button {
+  animation: map-place-pop 120ms steps(3, end) both;
+}
+
+@keyframes map-place-pop {
+  from { transform: translateY(8px); }
+  to { transform: translateY(0); }
+}
+
+@media (pointer: coarse) {
+  .nyc-map .map-place-link { min-height: 36px; }
+  .nyc-map .map-place-popup .leaflet-popup-close-button { width: 28px; height: 28px; }
+  .nyc-map .map-place-popup .map-place-country { padding-right: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nyc-map .map-photo-pin,
+  .nyc-map .map-place-link { transition: none; }
+  .nyc-map .map-place-popup > .leaflet-popup-content-wrapper,
+  .nyc-map .map-place-popup > .leaflet-popup-tip-container,
+  .nyc-map .map-place-popup > .leaflet-popup-close-button { animation: none; }
+}

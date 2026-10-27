@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "icon": {
+    "image": "/assets/passport/passport-hover-v2.png",
+    "width": 1536,
+    "height": 1024,
+    "frameWidth": 512,
+    "frameHeight": 512,
+    "columns": 3,
+    "rows": 2,
+    "defaultFrame": "closed",
+    "recommendedDisplaySize": 112,
+    "frames": [
+      {
+        "name": "closed",
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      {
+        "name": "lift",
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      {
+        "name": "peek",
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      {
+        "name": "opening",
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      {
+        "name": "open",
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      {
+        "name": "twinkle",
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      }
+    ],
+    "animations": {
+      "hoverOpen": {
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "durationMs": [
+          100,
+          110,
+          110,
+          120,
+          140
+        ]
+      },
+      "hoverHold": {
+        "frames": [
+          4,
+          5
+        ],
+        "durationMs": [
+          360,
+          360
+        ],
+        "loop": true
+      },
+      "hoverClose": {
+        "frames": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "durationMs": [
+          100,
+          100,
+          100,
+          100,
+          120
+        ]
+      },
+      "reducedMotion": {
+        "idle": 0,
+        "hover": 4
+      }
+    }
+  },
+  "pages": {
+    "left": {
+      "image": "/assets/passport/passport-page-left-v2.png",
+      "width": 1024,
+      "height": 1536,
+      "bindingEdge": "right"
+    },
+    "right": {
+      "image": "/assets/passport/passport-page-right-v2.png",
+      "width": 1024,
+      "height": 1536,
+      "bindingEdge": "left"
+    },
+    "contentInsets": {
+      "top": 0.14,
+      "right": 0.1,
+      "bottom": 0.12,
+      "left": 0.1
+    },
+    "layout": "Place left and right images edge-to-edge at equal height. Overlay dish stickers and live text later."
+  },
+  "scope": "Artwork and an isolated animation preview only. No quest, collection, passport progress or site game logic has been added.",
+  "objective": "Visit every country and collect all the dishes to fill your passport!"
+}

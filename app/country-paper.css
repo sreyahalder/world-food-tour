@@ -1,0 +1,255 @@
+/* The static sheet and block opening both read the same pixel-tile material. */
+.country-overlay { padding: 24px; }
+
+.country-sheet {
+  --paper-height: calc(100dvh - 60px);
+  --paper-edge: polygon(24px 4px, calc(100% - 24px) 4px,
+    calc(100% - 24px) 8px, calc(100% - 12px) 8px,
+    calc(100% - 12px) 16px, calc(100% - 4px) 16px,
+    calc(100% - 4px) calc(100% - 24px),
+    calc(100% - 12px) calc(100% - 24px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 24px) calc(100% - 8px),
+    calc(100% - 24px) calc(100% - 4px), 20px calc(100% - 4px),
+    20px calc(100% - 8px), 8px calc(100% - 8px),
+    8px calc(100% - 20px), 4px calc(100% - 20px),
+    4px 24px, 8px 24px, 8px 12px, 24px 12px);
+  width: min(640px, 100%);
+  max-height: var(--paper-height);
+  min-width: 0;
+  position: relative;
+  isolation: isolate;
+  filter: drop-shadow(0 3px 0 #1d211b) drop-shadow(6px 8px 0 #060b0866);
+}
+
+.country-sheet[data-opening] { pointer-events: none; }
+
+.country-paper-rest { position: relative; }
+
+.country-paper-surface {
+  position: relative;
+  clip-path: var(--paper-edge);
+  background: #fbf6e6;
+}
+
+.country-paper-texture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.paper-uncrumple-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.paper-uncrumple-stage canvas,
+.country-paper-texture { display: block; image-rendering: pixelated; }
+
+.country-sheet .country-panel {
+  --paper: #fbf6e6;
+  --ink: #2d261d;
+  --muted: #493f31;
+  --line: #94754669;
+  width: 100%;
+  max-height: var(--paper-height);
+  position: relative;
+  z-index: 1;
+  padding: 10px 10px 12px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  color: var(--ink);
+  background: transparent;
+  box-shadow: none;
+  scrollbar-width: thin;
+  scrollbar-color: #bda779 #f4ecd5;
+  overscroll-behavior: contain;
+}
+
+.country-sheet .country-panel > .modal-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: #56462f;
+  background: #f4ecd5;
+  border-bottom: 2px solid #c4ae7d;
+  box-shadow: 0 -10px 0 #f4ecd5;
+}
+
+.country-sheet .modal-top .icon-button {
+  width: 34px;
+  height: 34px;
+}
+
+.country-sheet .country-hero {
+  background: transparent;
+  border-bottom-color: var(--line);
+}
+
+.country-sheet .country-hero .country-shape {
+  fill: #807252;
+  opacity: .85;
+}
+
+.country-sheet .restaurant-info .restaurant-address,
+.country-sheet .country-content p,
+.country-sheet .country-content .muted {
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.country-sheet .visual-history small {
+  color: var(--muted);
+}
+
+.country-sheet .country-pagination {
+  border-top-color: var(--line);
+}
+
+.country-sheet .country-pagination > button {
+  color: #58482f;
+  background: #f4ecd5;
+  border-color: #b09a6b8c;
+}
+
+.country-sheet .country-pagination > button:hover {
+  background: #e7d8b3;
+}
+
+/* Readable journal copy, with compact period labels beside the history. */
+.country-sheet .history-summary {
+  display: grid;
+  gap: 19px;
+  margin: 22px 0 26px;
+  max-width: 760px;
+  color: var(--ink);
+  font: 400 16px/1.4 var(--sans);
+}
+
+.history-summary > p,
+.history-period > p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.history-period {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr);
+  gap: 22px;
+  padding-left: 17px;
+  border-left: 2px solid #ad946441;
+}
+
+.history-period > h3 {
+  margin: 2px 0 0;
+  color: var(--ink);
+  font: 700 16px/1.4 var(--sans);
+}
+
+.country-sheet .dish-copy p,
+.country-sheet .visit-review {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.country-sheet .restaurant-info .restaurant-address {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.country-sheet .visual-history small {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.game-page p { line-height: 1.4; }
+
+:is(.editor-panel, .login-panel, .credits-panel) :is(p, .muted, .field-note) {
+  color: #2d3025;
+  line-height: 1.4;
+}
+
+.text-button,
+.small-button,
+.button,
+.pixel-chip,
+.window-bar,
+.window-bar button {
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .country-sheet .history-summary { font-size: 15px; gap: 22px; }
+  .history-period { grid-template-columns: minmax(0, 1fr); gap: 5px; padding-left: 13px; }
+  .history-period > h3 { margin: 0; }
+}
+
+/* Inked controls and rules echo a game journal without making the text pixelated. */
+.country-sheet .country-block { border-bottom: 2px dotted #92754970; }
+.country-sheet .country-block h2 { color: #42351f; font-weight: 600; }
+.country-sheet .pixel-chip,
+.country-sheet .country-pagination > button {
+  border-radius: 0 !important;
+  border-color: #85744d;
+  box-shadow: inset 0 0 0 2px #fff3ce30, 2px 2px 0 #5a492b40;
+}
+
+.country-sheet .visual-history {
+  margin-top: 28px;
+  padding: 24px 22px;
+  border: 1px solid;
+}
+
+.country-sheet .visual-restaurant,
+.country-sheet .visual-history,
+.country-sheet .visual-dishes .dish-card {
+  border-color: #9174438c;
+  background: rgb(255 253 248 / 52%);
+  box-shadow: inset 0 0 0 2px #ffffff40;
+}
+
+@media (max-width: 600px) {
+  .country-overlay { padding: 9px; }
+  .country-sheet { --paper-height: calc(100dvh - 24px); }
+  .country-sheet .country-panel { padding: 10px 7px 12px; }
+  .country-sheet .visual-history { padding: 20px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country-sheet .country-paper-rest { opacity: 1 !important; }
+  .paper-uncrumple-stage { display: none; }
+}
+.restaurant-picker .name-only-option { margin: 12px 0 4px; }
+.restaurant-name-only .field-note { margin: 8px 0 12px; }
+.restaurant-links:empty { display: none; }
+
+.country-unvisited {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 12px;
+  min-height: 320px;
+  padding: 32px 12px 44px;
+  text-align: center;
+}
+
+.country-unvisited-avatars {
+  display: block;
+  width: 208px;
+  max-width: 70%;
+  height: auto;
+  filter: grayscale(1);
+  opacity: .68;
+  image-rendering: pixelated;
+}
+
+.country-sheet .country-unvisited > p {
+  margin: 0;
+  font: 600 20px/1.4 var(--sans);
+  color: var(--ink);
+}

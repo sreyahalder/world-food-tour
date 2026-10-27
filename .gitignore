@@ -58,3 +58,6 @@ next-env.d.ts
 # Generated development state
 *.tsbuildinfo
 /supabase/.temp/
+
+# Local font trials supplied by the owner, not repository redistributables.
+/public/fonts/abc-diatype/*-Trial.woff2

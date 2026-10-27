@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passport artwork | Alphabet City</title>
+  <style>
+    @font-face { font-family: DM; src: url('/fonts/dm-sans/dm-sans-latin-normal.woff2'); font-weight: 100 1000; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #1d271e; color: #f3eed6; font: 16px/1.5 DM, sans-serif; }
+    main { width: min(1080px,100%); margin: auto; padding: 32px 24px 64px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 32px; }
+    h1 { font-size: clamp(27px,4vw,38px); line-height: 1.15; letter-spacing: -.03em; margin: 0; }
+    h2 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+    p { margin: 0 0 16px; color: #c4cbb5; }
+    a { color: #e8cc85; text-underline-offset: 4px; }
+    a:focus-visible,button:focus-visible { outline: 3px solid #e8cc85; outline-offset: 5px; }
+    .icon-section { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center; padding: 24px; background: #29372b; border: 1px solid #657357; }
+    .icon-button { appearance: none; padding: 0; border: 0; background: transparent; cursor: pointer; color: inherit; display: grid; justify-items: center; font: inherit; }
+    canvas { display: block; image-rendering: pixelated; max-width: 100%; }
+    .icon-button canvas { width: 180px; height: 180px; }
+    .frames { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); margin: 20px 0 40px; border: 1px solid #495b43; background: #233026; }
+    figure { margin: 0; min-width: 0; }
+    .frames figure { padding: 12px 4px 16px; display: grid; justify-items: center; }
+    .frames canvas { width: 100%; height: auto; }
+    .frames figcaption { font-size: 14px; color: #d3d9c2; }
+    .pages-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+    .pages-heading a { white-space: nowrap; }
+    .spread { display: grid; grid-template-columns: 1fr 1fr; margin-top: 20px; box-shadow: 0 16px 40px #0006; overflow: hidden; }
+    .spread img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+    .spread img:first-child { clip-path: polygon(2.34375% 0,100% 0,100% 100%,2.34375% 100%,2.34375% 99.21875%,1.171875% 99.21875%,1.171875% 98.4375%,0 98.4375%,0 1.5625%,1.171875% 1.5625%,1.171875% .78125%,2.34375% .78125%); }
+    .downloads { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 24px; }
+    #error { color: #ffd4b6; }
+    @media(max-width:600px) {
+      main { padding: 24px 16px 40px; }
+      header { align-items: flex-start; }
+      .icon-section { grid-template-columns: 1fr; gap: 24px; }
+      .icon-button { justify-self: center; }
+      .frames { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .pages-heading { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>Passport artwork</h1><a href="/">Back to the map</a></header>
+    <section class="icon-section" aria-labelledby="animation-title">
+      <button type="button" class="icon-button" id="passport" aria-label="Preview passport hover animation"><canvas id="icon" width="512" height="512" aria-hidden="true"></canvas><span>Hover or tap to open</span></button>
+      <div><h2 id="animation-title">A little passport, ready for adventure.</h2><p>Six pixel poses open the cover and add a gold sparkle. Move away to close it.</p><a href="passport-hover-v2.png" download>Download the sprite sheet</a><p id="error" role="alert" hidden></p></div>
+    </section>
+    <div class="frames" id="frames" aria-label="Six passport animation frames"></div>
+    <section aria-labelledby="pages-title">
+      <div class="pages-heading"><div><h2 id="pages-title">Pages for your collection</h2><p>Ivory paper, faint security patterns, and room for every dish.</p></div></div>
+      <div class="spread"><img src="passport-page-left-v2.png" width="1024" height="1536" alt="16-bit left passport page with a pale pixel globe watermark and binding at the right edge"><img src="passport-page-right-v2.png" width="1024" height="1536" alt="16-bit right passport page with a pale pixel globe watermark and binding at the left edge"></div>
+      <div class="downloads"><a href="passport-page-left-v2.png" download>Left page</a><a href="passport-page-right-v2.png" download>Right page</a><a href="passport-assets-v1.json" download>Frame map and timing</a></div>
+    </section>
+  </main>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

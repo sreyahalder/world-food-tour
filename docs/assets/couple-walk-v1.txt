@@ -1,0 +1,40 @@
+Couple walking sprite sheet, version 1
+
+Built-in image-generation tool, 2026-10-21.
+PNG: public/assets/sprites/couple-walk-v1.png
+Frame map: public/assets/sprites/couple-walk-v1.json
+Source: /Users/sreyahalder/.codex/generated_images/01a16038-2801-7583-977e-36ec595c914e/exec-52ee1713-02c2-4bf3-9d69-3ea7be054699.png
+
+1536 x 1024 RGBA PNG, 6 columns x 4 rows, nominal 256 x 256 cells. Use the individually measured source rectangles in the frame map to preserve padding and account for the generated positions.
+Columns 0-2: Sreya. Columns 3-5: boyfriend.
+Rows: down, left, right, up.
+Within each character block: step A, idle/passing frame, step B.
+Intended sequence: A, idle, B, idle. Intended controls: Sreya WASD, boyfriend arrows.
+No sunglasses or bag. Outfits and hair based on the user's photo.
+
+Integrated into CoupleWalkers on 2026-10-21. WASD controls Sreya, arrow keys control her boyfriend, including simultaneous and diagonal movement. Walking uses step A, idle, step B, idle with shared foot anchors. Idle animation adds a one-pixel upper-body breath and gentle sway, with planted feet. Reduced motion disables idle movement. Pause and Reset are available in the control strip. Typing, editors, photos and other modal overlays suspend character controls. The original generated PNG remains unmodified.
+
+Generation prompt
+Use case: identity-preserve, pixel-art character adaptation.
+Asset type: two-player walking sprite sheet for a cozy retro food-adventure game.
+Reference image: the attached photograph is a visual reference for the TWO adults' likeness, hair, skin tones, and outfits only. Do not reproduce the scenery or their hugging pose.
+
+Create one landscape PNG sprite sheet on a genuine transparent background. EXACTLY 24 separate full-body character sprites in a strict 6-column by 4-row grid. Target canvas 1536 x 1024, every grid cell 256 x 256. No title, no text, no labels, no grid lines, no ground shadows, no props. A clean production-style sprite atlas, not a poster or a scene. Equal cell spacing and a consistent feet baseline in every cell. Each character centered within its cell with ample transparent padding. Never crop a head, hair, hand or shoe.
+
+Character A, the woman from the reference, occupies columns 1, 2, 3 in ALL four rows: warm medium-brown skin, long straight very dark brown hair worn loose, gentle smile, bright red long-sleeve sweater, cream/off-white short skirt, white socks and black ankle boots. NO BAG, no purse, no strap, no sunglasses, no glasses. Both hands free. Retain her hair and outfit silhouette.
+Character B, the man from the reference, occupies columns 4, 5, 6 in ALL four rows: light skin, short thick curly dark brown hair, gentle smile, slightly oversized muted slate/navy-blue sweatshirt, relaxed blue jeans, simple dark shoes. No sunglasses, no glasses, no accessories. Both hands free. Slightly taller than Character A.
+
+Grid row directions:
+Row 1: facing DOWN toward the viewer.
+Row 2: facing LEFT, full left-facing profile.
+Row 3: facing RIGHT, full right-facing profile.
+Row 4: facing UP away from the viewer, back of head and back of clothes.
+
+Within each character's THREE columns in every row:
+First column = walking stride A, left leg forward and opposite arm forward.
+Second column = neutral standing / passing frame, feet together and arms relaxed.
+Third column = walking stride B, right leg forward and opposite arm forward.
+Make stride A and stride B visibly different. Do not repeat identical standing poses. Keep body width, outfit details, head size, placement, and palette consistent across all frames. Allow only tiny natural walking bob. These three frames must work in the loop A, neutral, B, neutral.
+
+Style: charming true pixel art with a 16-bit indie adventure feel, gentle slightly overhead RPG view, friendly chibi proportions about 3 heads tall, expressive but extremely simple uncovered eyes, tidy dark brown pixel outlines, soft limited flat color shading, every edge built from obvious crisp square pixels. Aim for characters about 32 logical pixels wide and 48 to 52 logical pixels tall, enlarged uniformly 4x with nearest-neighbor. No antialiasing, no blur, no gradients, no painted illustration treatment, no realistic faces. The two characters should look like a cohesive pair made by the same sprite artist.
+Deliver the 6 x 4 sprite sheet ONLY, with genuine transparent alpha between all characters and no drawn checkerboard.

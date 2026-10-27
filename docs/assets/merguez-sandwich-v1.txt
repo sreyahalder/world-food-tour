@@ -1,0 +1,18 @@
+Merguez sandwich illustration v1, October 21, 2026
+
+Created with the built-in image-generation tool.
+Saved asset: public/assets/dish-stickers/merguez-sandwich-v1.png
+Original output: /Users/sreyahalder/.codex/generated_images/01a16038-2801-7583-977e-36ec595c914e/exec-22fd5aea-6798-4d5b-bea2-a60a80ab51e1.png
+Content reference: /Users/sreyahalder/Desktop/IMG_3915.jpeg
+Style reference: public/assets/dish-stickers/dish-sprites-v2.png
+The generated PNG is copied unchanged, preserving its transparent alpha and original pixel detail. No extra pixelation filter, alpha threshold, or resolution reduction. The existing dish sticker styling provides the top-left overhang and 8-degree counterclockwise tilt. Name matching applies this image to merguez sandwich entries without changing the saved photo or other dish details.
+
+Final prompt:
+Use case: stylized-concept.
+Asset type: one transparent food illustration for the World Food Tour game's dish sticker.
+Input images: Image 1 is a CONTENT reference, the user's actual merguez baguette sandwich. Image 2 is STYLE reference only, the existing food sprite atlas. Generate a new single illustration, do not modify the reference images or produce an atlas.
+Subject: An appetizing Algerian merguez sandwich in a crusty golden baguette, a clean cut end showing two reddish-brown sausage cross-sections, golden fries, fresh tomato and small green lettuce leaves. A little plain ivory deli paper wraps the lower half, as in the photo. Keep the sausage and fillings clearly visible and recognizable. No hand, table, plate, tray, soup, or couscous.
+Style: Match the warm detailed pixel-food illustrations in the atlas, with dark brown contour pixels, golden highlights and small square color clusters. Friendly 16-bit game food art with the same level of detail as a single existing atlas object. Preserve the detail and readable ingredients; do not reduce the whole sandwich to a crude 32x32 sprite or apply a heavy mosaic/pixelation filter. No photographic rendering.
+Composition: One sandwich only, centered, slightly elevated three-quarter view, cut end facing the viewer, mostly horizontal length. Entire sandwich and wrapping visible with close but clear padding. Occupies roughly 88 percent of canvas width. Square image, preferably 1024x1024.
+Background: actual transparent RGBA alpha zero around the sandwich silhouette. No backdrop, checkerboard, cast shadow, circular badge, sticker border, labels, lettering or extra objects. Any white belongs only to the paper wrapping.
+

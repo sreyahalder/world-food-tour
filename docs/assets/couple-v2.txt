@@ -1,0 +1,28 @@
+Couple sprite sheet v2, October 21, 2026
+
+Built-in image-generation tool created 30 new drag and idle frames, matching the existing couple-walk-v1.png reference. Original generated output copied unchanged to public/assets/sprites/couple-actions-v2.png. Source: /Users/sreyahalder/.codex/generated_images/01a16038-2801-7583-977e-36ec595c914e/exec-2a20f744-7901-4825-9089-563c8e6703ef.png
+
+Combined sheet: public/assets/sprites/couple-v2.png (1536 x 2048 RGBA). The original 24 walking frames occupy the top 1024 pixels, with the 30 new frames packed below without rescaling. Both original source PNGs remain available. Generated transparency is preserved.
+Frame map: public/assets/sprites/couple-v2.json. All 54 rectangles are measured, with foot anchors and scale values to normalize the original and additional frames to the same character size. Runtime frames are 48 x 64 logical pixels, displayed at 2x. Alpha edges are snapped in the runtime frame cache only.
+
+New rows: drag facing front, then idle facing down, left, right, up. Columns 1-3 are Sreya; columns 4-6 her boyfriend. Drag phases are left, hold, right. Idle phases are rest, breathe, blink (back-facing final phase is a settling pose). Walking frames keep their original source rectangles.
+
+Integration: the runtime now loads the combined v2 sheet. Mouse and touch dragging use pointer capture, preserve the initial grab offset, keep both characters on screen, and return to directional idle after release. Keyboard walking remains available. Reduced motion shows static held and idle poses. docs/assets/couple-v2-rendered.png previews all frames through the actual runtime renderer.
+
+Generation prompt:
+Use case: identity-preserve.
+Asset type: transparent pixel-art animation sprite sheet extension for an existing two-player cozy RPG.
+Input image: the provided existing walking atlas is the character identity, outfit, palette, proportions, pixel art, and viewing-angle reference. Create ADDITIONAL animation frames, not another walking sheet.
+
+Produce ONE RGBA sprite sheet with genuine transparent background, exactly SIX COLUMNS by FIVE ROWS, 30 separate full-body sprites. Target 1536 x 1280, 256 x 256 cells, equal spacing, same scale and foot baseline throughout, generous clear gutters. NO labels, no text, no ground shadows, no checkerboard, no opaque backdrop. No character may cross a cell boundary.
+
+Columns 1, 2, 3 in EVERY row are the woman from the reference: warm medium-brown skin, very long straight dark brown hair, red long-sleeved sweater, cream short skirt, white socks and black boots. NO sunglasses, glasses, purse, bag or strap.
+Columns 4, 5, 6 in EVERY row are the man: light skin, thick curly dark hair, slate navy sweatshirt, blue jeans, dark shoes. No glasses, sunglasses or accessories. Slightly taller than the woman. Preserve reference likeness, outfit silhouette, pixel palette, head and body size closely.
+
+ROW 1: DRAG / PICKED UP, both characters face the viewer. The character is being lifted, reaching both arms overhead, feet dangling. Three frames per person: a gentle leg swing left, centered dangling, a gentle leg swing right. Smiling or softly surprised, playful, not distressed. Arms, hands and head remain aligned across the cycle, only boots/legs and a little hair change. No visible hand, cursor, string or external object. Never hide the clothing or crop raised hands. Keep these characters the same body size as the idle rows; allow extra space for the hands.
+ROW 2: IDLE facing DOWN toward viewer. Three frames per person: relaxed eyes-open neutral, slight inhale with tiny shoulder/hair change, blink with eyes visibly closed. Feet stay planted at the exact same baseline. No walking strides.
+ROW 3: IDLE facing LEFT, full left-facing profile. Three frames: neutral, subtle inhale, blink, stationary feet.
+ROW 4: IDLE facing RIGHT, full right-facing profile. Three frames: neutral, subtle inhale, blink, stationary feet.
+ROW 5: IDLE facing UP, backs visible. Three frames: relaxed neutral, gentle inhale with shoulders slightly raised, soft hair/shoulder settling, stationary feet.
+
+Style: the same polished friendly 16-bit chibi RPG pixel characters as the reference, approx three-head-tall proportions, crisp square pixel clusters, dark brown outlines, limited flat color shading, simple expressive eyes. Every sequence should loop without changes in scale, outfit, face, or position. No photorealism, no gradients, no smooth illustration, no halos. At least 12px of transparent padding around every figure. Transparent alpha is essential.
