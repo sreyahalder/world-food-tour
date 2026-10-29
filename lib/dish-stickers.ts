@@ -19,6 +19,9 @@ export const defaultDishSticker = dishSpriteUrl('plate');
 export const merguezSandwichSticker = '/assets/dish-stickers/merguez-sandwich-v2.png';
 export const caneloDeCuaDeBouSticker = '/assets/dish-stickers/canelo-de-cua-de-bou-v1.png';
 const individualDishStickers: [string, string[]][] = [
+  ['/assets/dish-stickers/carbonade-flamande-frites-v1.png', ['carbonade flamande', 'carbonnade flamande']],
+  ['/assets/dish-stickers/chicon-au-gratin-v1.png', ['chicon au gratin', 'chicons au gratin']],
+  ['/assets/dish-stickers/moules-mariniere-v1.png', ['moules frites mariniere', 'moules mariniere', 'moules marinieres']],
   ['/assets/dish-stickers/fuchka-v1.png', ['fuchka', 'fuska', 'phuchka']],
   ['/assets/dish-stickers/goat-biryani-v1.png', ['goat biryani', 'goat biriyani']],
   ['/assets/dish-stickers/ilish-v1.png', ['ilish', 'elish', 'hilsa']],
